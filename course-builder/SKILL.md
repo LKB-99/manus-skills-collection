@@ -1,6 +1,6 @@
 ---
 name: course-builder
-description: A comprehensive skill for creating complete online courses, including modules, quizzes, and certificates.
+description: "Create professional online courses with modules, quizzes, and certificates. Use this skill when users want to create, develop, or structure an online course, training program, or educational content. Triggers: online course, create course, course builder, curriculum, modules, lessons, quizzes, certificate, training program, educational content, criar curso, curso online, montar um curso."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -13,7 +13,31 @@ metadata:
 
 The Course Builder skill is a powerful tool designed to assist educators, trainers, and content creators in developing comprehensive online courses from scratch. This skill streamlines the entire course creation process, from structuring the curriculum and generating content to creating assessments and issuing certificates. By leveraging a suite of integrated tools, it enables users to build engaging and effective learning experiences with minimal friction. Whether you are a seasoned instructional designer or a subject matter expert new to online education, this skill provides the framework and automation needed to bring your educational vision to life.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: online course, create course, build course, course builder, curriculum, modules, lessons, quizzes, certificate, training program, educational content, course outline, instructional design, e-learning
+- Palavras-chave (PT): criar curso, curso online, montar um curso, desenvolver curso, estrutura de curso, material didático, curso EAD, videoaulas, criar treinamento
+- Phrases: "create an online course", "build a training program", "develop a curriculum", "I want to make a course about...", "how to structure a course"
+- Frases (PT): "quero criar um curso online", "como montar um curso de", "preciso desenvolver um treinamento", "criar um material didático"
+- Context: Any discussion about creating, structuring, or developing educational or training content from scratch.
+
+**Example user queries that trigger this skill:**
+- "I want to create an online course about digital marketing."
+- "Can you help me build a corporate training program for new hires?"
+- "Quero montar um curso online sobre finanças pessoais."
+- "Preciso de ajuda para estruturar o currículo do meu curso."
+
 ## When to Use This Skill
+
+**ALWAYS use this skill when user mentions:**
+- Creating a new online course
+- Converting existing materials into a course
+- Building corporate training programs
+- Developing educational content for a specific audience
+- Structuring a curriculum or course outline
+- Automating content generation for lessons or quizzes
+- Generating certificates of completion
 
 This skill is particularly useful in the following scenarios:
 

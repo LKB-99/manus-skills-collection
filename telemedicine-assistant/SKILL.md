@@ -1,6 +1,6 @@
 ---
 name: telemedicine-assistant
-description: A comprehensive assistant for medical teleconsultations, providing checklists, documentation templates, and patient communication tools.
+description: "A comprehensive assistant for medical teleconsultations. Use this skill when users need to conduct, document, or prepare for a virtual medical appointment, teleconsultation, or remote patient visit. Triggers: telemedicine, teleconsultation, telemedicina, teleconsulta, consulta online, consulta virtual, teletriagem, remote consultation, virtual visit, e-health, digital health, remote patient monitoring."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,6 +12,19 @@ metadata:
 ## Overview
 
 The Telemedicine Assistant skill is designed to support healthcare professionals, like Dr. Lucas Kefler Bergamaschi, in conducting effective, safe, and well-documented teleconsultations. In an era where digital health is paramount, this skill acts as a digital co-pilot, streamlining the entire telemedicine workflow from pre-consultation preparation to post-consultation follow-up. It provides structured checklists, standardized documentation templates, and communication aids to ensure that the quality of care in a virtual setting is equivalent to an in-person visit. This tool is particularly useful for physicians who manage complex cases involving regenerative medicine, pain management, and integrative therapies, where detailed patient history and meticulous documentation are critical.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: telemedicine, teleconsultation, telemedicina, teleconsulta, consulta online, consulta virtual, teletriagem, remote consultation, virtual visit, e-health, digital health, remote patient monitoring, atendimento online, consulta por vídeo.
+- Phrases: "realizar uma teleconsulta", "preparar para uma consulta online", "documentar uma telemedicina", "assistente de telemedicina", "checklist para teleconsulta", "consentimento para telemedicina".
+- Context: Any discussion about conducting virtual medical appointments, preparing documentation for remote consultations, or managing patient communication for telemedicine.
+
+**Example user queries that trigger this skill:**
+- "Preciso de um checklist para minha próxima teleconsulta."
+- "Como eu documento uma consulta por vídeo no prontuário?"
+- "Gere um modelo de consentimento informado para telemedicina."
+- "Help me prepare for a remote patient consultation."
 
 ## When to Use This Skill
 
@@ -139,8 +152,7 @@ Follow these steps to integrate the Telemedicine Assistant into your practice.
 
 To maximize the effectiveness of this skill and your teleconsultations, consider the following best practices.
 
-- **Maintain Good 
- Just as in person, your demeanor on camera matters. Maintain eye contact by looking at the camera, listen actively, and show empathy.
+- **Maintain Good Webside Manner:** Just as in person, your demeanor on camera matters. Maintain eye contact by looking at the camera, listen actively, and show empathy.
 - **Be Prepared for Technology Failures:** Have a backup plan. If the video call fails, be ready to switch to a phone call to complete the consultation.
 - **Ensure Patient Privacy:** Remind the patient to be in a private location. Use headphones to ensure your conversation is not overheard.
 - **Set Clear Expectations:** At the start of the consultation, briefly explain the process and what can be accomplished. Also, clarify the limitations.

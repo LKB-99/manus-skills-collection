@@ -1,6 +1,6 @@
 ---
 name: database-schema
-description: Design and document database schemas with ER diagrams.
+description: "Design and document database schemas with ER diagrams. Use this skill when users want to create, design, or document database schemas, ER diagrams, or SQL schemas. Triggers: database schema, ER diagram, entity-relationship, SQL schema, database design, modelagem de dados, esquema de banco de dados, diagrama ER."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,12 +12,27 @@ metadata:
 ## Overview
 This skill is designed to assist in the creation, design, and documentation of database schemas. It provides a structured workflow for defining entities, attributes, relationships, and constraints, culminating in the generation of Entity-Relationship (ER) diagrams. This skill is ideal for database administrators, software developers, and system architects who need to create new databases or document existing ones.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: database schema, ER diagram, entity-relationship, SQL schema, database design, database modeling, data modeling, database structure, modelagem de dados, esquema de banco de dados, diagrama ER, criar banco de dados, projetar banco de dados.
+- Phrases: "design a database schema", "create an ER diagram", "document my database", "modelar um banco de dados", "preciso de um esquema de banco de dados", "gerar diagrama de entidade-relacionamento".
+- Context: Any discussion about designing, creating, or documenting the structure of a database.
+
+**Example user queries that trigger this skill:**
+- "I need to design a database for my new e-commerce website."
+- "Can you help me create an ER diagram for my project?"
+- "Preciso documentar o esquema do nosso banco de dados legado."
+- "Como eu faço a modelagem de dados para um sistema de blog?"
+
 ## When to Use This Skill
-- **New Project Initiation:** When starting a new software project that requires a database backend.
-- **Database Migration:** When migrating an existing database to a new platform or technology.
-- **System Documentation:** To create comprehensive documentation for an existing database.
-- **Team Collaboration:** To facilitate communication and understanding of the database structure among team members.
-- **Educational Purposes:** For learning and teaching database design concepts.
+**ALWAYS use this skill when user mentions:**
+- Designing a new database schema from scratch.
+- Documenting an existing database structure.
+- Generating Entity-Relationship (ER) diagrams.
+- Creating or modifying SQL schema files.
+- Discussing data modeling and database design concepts.
+- Migrating a database and needing to understand the schema.
 
 ## Core Capabilities
 

@@ -1,7 +1,7 @@
 '''markdown
 ---
 name: crypto-tracker
-description: Track cryptocurrency prices, set price alerts, and perform market analysis.
+description: "Use this skill to track cryptocurrency prices, market trends, and manage crypto portfolios. Triggers: crypto, cryptocurrency, bitcoin, ethereum, BTC, ETH, price, value, portfolio, market cap, blockfolio, cotação, criptomoeda, valor, preço."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 # Crypto Tracker: Real-Time Cryptocurrency Tracking and Analysis
 
 ## Overview
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: crypto, cryptocurrency, bitcoin, ethereum, BTC, ETH, altcoin, token, price, value, cotação, preço, valor, market cap, portfolio, blockfolio
+- Phrases: "what's the price of", "how is the crypto market", "track my crypto", "crypto portfolio value", "qual o preço de", "valor do bitcoin", "mercado de cripto"
+- Context: Any discussion about monitoring cryptocurrency prices, managing a crypto investment portfolio, or analyzing market trends.
+
+**Example user queries that trigger this skill:**
+- "What is the current price of Bitcoin in USD?"
+- "Can you track my crypto portfolio for me?"
+- "Qual a cotação do Ethereum em Reais?"
+- "Show me the top 10 cryptocurrencies by market cap."
 
 The Crypto Tracker skill empowers Manus to monitor cryptocurrency markets, providing real-time price data, customizable alerts, and basic market analysis. It leverages browser automation and data extraction to gather information from reliable financial data sources (e.g., CoinMarketCap, CoinGecko, Binance). This skill is designed for users who need to stay updated on cryptocurrency movements, whether for trading, investment monitoring, or research purposes. It can fetch current prices, track portfolio values, notify users of significant price changes, and provide summaries of market trends.
 

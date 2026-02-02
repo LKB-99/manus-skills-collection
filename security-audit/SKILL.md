@@ -1,3 +1,19 @@
+---
+name: Security Audit
+description: "Performs a comprehensive security audit on applications based on OWASP ASVS. Use this skill when users want to perform a security check, audit, or review of their application. Triggers: security audit, security check, vulnerability scan, penetration test, OWASP, ASVS, application security, code review, secure coding, pentest, auditoria de segurança, verificação de segurança, análise de vulnerabilidade, teste de invasão."
+---
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: security audit, security check, vulnerability scan, penetration test, OWASP, ASVS, application security, code review, secure coding, pentest, auditoria de segurança, verificação de segurança, análise de vulnerabilidade, teste de invasão, teste de penetração.
+- Phrases: "perform a security audit", "check my app for vulnerabilities", "run a penetration test", "review my code for security issues", "fazer uma auditoria de segurança", "verificar vulnerabilidades no meu aplicativo", "realizar um pentest".
+- Context: Any discussion about assessing or testing the security of an application, codebase, or system.
+
+**Example user queries that trigger this skill:**
+- "I need to run a security audit on my web application before deployment."
+- "Can you help me perform a penetration test on my API?"
+- "Preciso de uma análise de segurança do meu código-fonte."
 
 ## When to Use This Skill
 
@@ -207,103 +223,3 @@ dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
 DocumentBuilder db = dbf.newDocumentBuilder();
 Document doc = db.parse(new File("input.xml"));
 ```
-
-### Example 5: Insecure Deserialization
-
-**ASVS Control:** V5.5.1 - Verify that the application does not deserialize untrusted data without sufficient safeguards.
-
-**Finding:** The application deserializes a user-provided cookie without any validation, which can lead to remote code execution.
-
-**Recommendation:** Avoid deserializing untrusted data. If deserialization is necessary, use a safe serialization format and implement strict type checking.
-
-**Code Example (Python with Pickle):**
-
-```python
-# Vulnerable code
-import pickle
-import base64
-
-cookie = request.cookies.get('session')
-data = pickle.loads(base64.b64decode(cookie))
-
-# Secure code (using JSON instead of Pickle)
-import json
-
-cookie = request.cookies.get('session')
-data = json.loads(base64.b64decode(cookie))
-```
-
-## Checklist Template
-
-This checklist template can be used to track the progress of a security audit. It is based on the OWASP ASVS and can be customized to fit the specific needs of your application.
-
-### V1: Architecture, Design and Threat Modeling
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 1.1.1 | Verify that a threat model has been created for the application. | ✓ | ✓ | ✓ | | |
-| 1.1.2 | Verify that the threat model is updated regularly. | | ✓ | ✓ | | |
-
-### V2: Authentication
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 2.1.1 | Verify that passwords are at least 12 characters long. | ✓ | ✓ | ✓ | | |
-| 2.1.2 | Verify that passwords are not stored in plaintext. | ✓ | ✓ | ✓ | | |
-
-### V3: Session Management
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 3.1.1 | Verify that session tokens are at least 128 bits long. | ✓ | ✓ | ✓ | | |
-| 3.1.2 | Verify that session tokens are regenerated after login. | ✓ | ✓ | ✓ | | |
-
-### V4: Access Control
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 4.1.1 | Verify that the principle of least privilege is enforced. | ✓ | ✓ | ✓ | | |
-| 4.1.2 | Verify that access control decisions are enforced on the server side. | ✓ | ✓ | ✓ | | |
-
-### V5: Malicious Input Handling
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 5.1.1 | Verify that all input is validated. | ✓ | ✓ | ✓ | | |
-| 5.1.2 | Verify that all output is encoded. | ✓ | ✓ | ✓ | | |
-
-### V6: Cryptography at Rest
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 6.1.1 | Verify that sensitive data is encrypted at rest. | | ✓ | ✓ | | |
-| 6.1.2 | Verify that strong encryption algorithms are used. | | ✓ | ✓ | | |
-
-### V7: Error Handling and Logging
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 7.1.1 | Verify that error messages do not reveal sensitive information. | ✓ | ✓ | ✓ | | |
-| 7.1.2 | Verify that security-related events are logged. | ✓ | ✓ | ✓ | | |
-
-### V8: Data Protection
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 8.1.1 | Verify that data is classified according to its sensitivity. | | ✓ | ✓ | | |
-| 8.1.2 | Verify that data privacy regulations are complied with. | | ✓ | ✓ | | |
-
-### V9: Communication Security
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 9.1.1 | Verify that TLS/SSL is used for all communications. | ✓ | ✓ | ✓ | | |
-| 9.1.2 | Verify that only strong TLS/SSL protocols and ciphers are used. | | ✓ | ✓ | | |
-
-### V10: HTTP Security Configuration
-
-| # | Description | Level 1 | Level 2 | Level 3 | Status | Notes |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| 10.1.1 | Verify that the Content Security Policy (CSP) header is used. | | ✓ | ✓ | | |
-| 10.1.2 | Verify that the HTTP Strict Transport Security (HSTS) header is used. | ✓ | ✓ | ✓ | | |
-

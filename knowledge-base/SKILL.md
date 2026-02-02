@@ -1,6 +1,6 @@
 ---
 name: knowledge-base
-description: Create, organize, and manage enterprise knowledge bases to centralize information and improve team collaboration.
+description: "Create, organize, and manage enterprise knowledge bases. Use this skill when users want to centralize information, create a company wiki, or manage documentation. Triggers: knowledge base, wiki, documentation, centralize information, information management, base de conhecimento, gestão do conhecimento."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 
 ## Overview
 This skill empowers Manus to create, structure, and maintain comprehensive knowledge bases for businesses and teams. It is designed to centralize critical information, making it easily accessible and searchable. By leveraging this skill, you can build a single source of truth for company processes, documentation, FAQs, and best practices, thereby enhancing productivity and reducing information silos.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: knowledge base, wiki, documentation, centralize information, information management, base de conhecimento, gestão do conhecimento, documentação, centralizar informação
+- Phrases: "create a knowledge base", "organize company documents", "build a team wiki", "criar uma base de conhecimento", "gerenciar documentação"
+- Context: Any discussion about creating, structuring, or managing a centralized repository of information for a team or company.
+
+**Example user queries that trigger this skill:**
+- "I need to create a knowledge base for my company."
+- "How can I organize our internal documentation?"
+- "Let's build a wiki for the engineering team."
+- "Quero criar uma base de conhecimento para minha equipe."
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:

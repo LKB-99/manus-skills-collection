@@ -1,7 +1,6 @@
-
 ---
 name: email-marketing
-description: Plan, create, and execute email marketing campaigns with templates, automation, and conversion analysis.
+description: "Use this skill when users want to plan, create, and execute email marketing campaigns. Triggers: email marketing, newsletter, campaign, mailchimp, lead nurturing, drip campaign, email blast, marketing automation, e-mail marketing, campanha de e-mail, newsletter, automação de marketing."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,6 +11,19 @@ metadata:
 
 ## Overview
 This skill empowers Manus to manage comprehensive email marketing campaigns from start to finish. It provides the capabilities to design email templates, segment audiences, automate email sequences, track campaign performance, and analyze conversion metrics. By leveraging this skill, users can execute professional email marketing strategies to engage their audience, nurture leads, and drive sales without needing to manually handle each step. It is designed for scenarios requiring structured, data-driven communication with a large number of contacts, integrating content creation, scheduling, and performance analysis into a seamless workflow.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: email marketing, newsletter, campaign, mailchimp, lead nurturing, drip campaign, email blast, marketing automation, e-mail marketing, campanha de e-mail, newsletter, automação de marketing
+- Phrases: "criar uma campanha de e-mail", "enviar uma newsletter", "automatizar meus e-mails", "fazer email marketing"
+- Context: Any discussion about creating, managing, or analyzing email campaigns.
+
+**Example user queries that trigger this skill:**
+- "Quero criar uma campanha de email marketing para minha loja"
+- "Como posso enviar uma newsletter para meus assinantes?"
+- "Preciso de ajuda para automatizar o envio de e-mails."
+
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:
 
@@ -217,56 +229,3 @@ This example shows how to create a template for an abandoned cart email.
 
 ### Example 3: Weekly Newsletter Template
 This is a reusable template for a weekly newsletter.
-
-**Template:** `newsletter_template.md` (using Markdown for simplicity)
-
-```markdown
---- 
-subject: "This Week in [Your Industry]: {{date}}"
----
-
-# Hi {{firstName}},
-
-Here is your weekly roundup of news and articles.
-
-## Top Story of the Week
-
-**[Article Title 1]**
-
-[Brief summary of the article]...
-
-[Read More]({{article.url.1}})
-
----
-
-## More Highlights
-
-*   **[Article Title 2]** - [Read More]({{article.url.2}})
-*   **[Article Title 3]** - [Read More]({{article.url.3}})
-
----
-
-## From the Blog
-
-**[Our Latest Blog Post]**
-
-[Summary of your blog post]...
-
-[Read it Here]({{blog.post.url}})
-
----
-
-<p style="font-size: 12px; color: #888;">
-  You are receiving this email because you subscribed to our newsletter. 
-  <a href="{{unsubscribe.url}}">Unsubscribe</a>.
-</p>
-```
-
-## References
-For more in-depth information on email marketing strategies and best practices, consult these resources:
-
-- **[Mailchimp Email Marketing Guide](https://mailchimp.com/resources/email-marketing-guide/):** A comprehensive guide covering everything from building a list to optimizing your campaigns.
-- **[HubSpot Email Marketing Guide](https://blog.hubspot.com/marketing/email-marketing-guide):** An in-depth resource with tips, stats, and best practices for successful email marketing.
-- **[CAN-SPAM Act: A Compliance Guide for Business](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business):** The official guide from the FTC on how to comply with email marketing regulations in the United States.
-- **[GDPR and Email Marketing](https://gdpr.eu/email-marketing/):** Information on how the General Data Protection Regulation affects email marketing practices in the European Union.
-- **[Really Good Emails](https://reallygoodemails.com/):** A curated collection of well-designed and effective emails for inspiration.

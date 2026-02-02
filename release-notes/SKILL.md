@@ -1,6 +1,6 @@
---- 
+---
 name: release-notes
-description: Create professional release notes for software products.
+description: "Create professional release notes for software products. Use this skill when users want to generate, write, or format release notes, changelogs, or update announcements. Triggers: release notes, changelog, what's new, software update, version update, notas de versão, changelog, nova versão."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,18 @@ metadata:
 
 ## Overview
 This skill is designed to automate the creation of comprehensive and professional release notes for software products. It streamlines the process of gathering information about new features, bug fixes, and improvements, and then formats this information into a clear, concise, and well-structured document. This is particularly useful for development teams that need to communicate changes to users, stakeholders, or internal teams in a consistent and timely manner.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: release notes, changelog, what's new, software update, version update, notas de versão, changelog, nova versão, atualizações de software
+- Phrases: "create release notes", "gerar notas de versão", "what's new in this version", "escrever um changelog"
+- Context: Any discussion about documenting changes in a new software version.
+
+**Example user queries that trigger this skill:**
+- "Preciso criar as notas de versão para a versão 2.5 do nosso app."
+- "How to write a good changelog?"
+- "Generate release notes from my git commits."
 
 ## When to Use This Skill
 This skill is most effective in the following scenarios:

@@ -1,6 +1,6 @@
 ---
 name: meeting-notes
-description: Automatically generate comprehensive meeting minutes, including key decisions, action items, and follow-up tracking.
+description: "Use this skill to automatically generate comprehensive meeting minutes, including key decisions, action items, and follow-up tracking. Triggers: meeting notes, meeting minutes, meeting summary, action items, decisions, follow-up, ata de reunião, resumo da reunião, pauta da reunião."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,20 @@ metadata:
 
 ## Overview
 This skill is designed to streamline the process of documenting meetings. It takes a raw meeting transcript or a set of rough notes and transforms them into a structured, professional, and actionable summary. The primary goal is to save time, improve clarity, and ensure that all critical outcomes of a meeting, such as decisions and action items, are captured and tracked effectively. By automating this process, teams can focus more on the meeting's content and less on the administrative burden of note-taking.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: meeting notes, meeting minutes, meeting summary, action items, decisions, follow-up, transcript, ata de reunião, resumo da reunião, pauta da reunião, minuta da reunião.
+- Phrases: "generate meeting notes", "summarize the meeting", "create meeting minutes from this transcript", "what were the action items?", "document the decisions", "gerar ata da reunião", "resumir a reunião", "quais foram os itens de ação?".
+- Context: Any discussion about documenting the outcomes of a meeting, processing a meeting transcript, or creating a structured summary of a discussion.
+
+**Example user queries that trigger this skill:**
+- "Can you summarize this meeting transcript for me?"
+- "I need to create the meeting minutes for the project sync."
+- "Please extract the action items and decisions from our last call."
+- "Preciso de um resumo da nossa reunião de ontem."
+- "Gere a ata da reunião a partir desta transcrição."
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:

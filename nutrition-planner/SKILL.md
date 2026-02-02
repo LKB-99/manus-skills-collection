@@ -1,10 +1,8 @@
-
-
 ---
 name: nutrition-planner
-description: Provides personalized nutrition planning, including calorie and macronutrient calculation, meal plan generation, and recipe suggestions.
+description: "Create personalized nutrition plans, calculate calories/macros, and generate meal ideas. Use this skill for diet planning, weight management, or muscle gain. Triggers: nutrition plan, diet plan, meal plan, calories, macros, recipes, plano alimentar, dieta, calorias, macronutrientes, receitas, emagrecer, ganhar massa."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
-license: MIT License
+license: MIT
 metadata:
     skill-author: Lucas Kefler Bergamaschi
 ---
@@ -14,6 +12,19 @@ metadata:
 ## Overview
 
 The Nutrition Planner skill is a comprehensive tool designed to assist users in creating personalized nutrition plans tailored to their specific goals, preferences, and physiological data. It automates the calculation of essential metrics like Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE), determines optimal macronutrient splits, and generates structured meal plans complete with recipe ideas and grocery lists. This skill acts as a personal nutrition assistant, simplifying the complex process of diet planning and empowering users to take control of their health and wellness journey.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: nutrition plan, diet plan, meal plan, calorie calculation, macronutrients, healthy eating, weight loss diet, muscle gain diet, plano alimentar, plano nutricional, dieta, calcular calorias, macronutrientes, receitas, emagrecer, ganhar massa.
+- Phrases: "create a meal plan", "calculate my calories", "I need a diet for weight loss", "what should I eat to gain muscle", "criar um plano alimentar", "calcular minhas calorias", "preciso de uma dieta para emagrecer".
+- Context: Any discussion about creating structured eating plans, calculating nutritional needs, or planning meals for specific health or fitness goals.
+
+**Example user queries that trigger this skill:**
+- "I want a nutrition plan to lose 10 pounds."
+- "Can you create a 7-day meal plan for me?"
+- "Quero uma dieta para ganhar massa muscular."
+- "Como posso calcular minhas necessidades de calorias e macros?"
 
 ## When to Use This Skill
 

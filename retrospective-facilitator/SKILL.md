@@ -1,6 +1,6 @@
 ---
 name: retrospective-facilitator
-description: Facilitates agile retrospectives with templates, analysis, and actionable insights.
+description: "Facilitates agile retrospectives with templates, analysis, and actionable insights. Use this skill when users want to conduct, facilitate, or improve agile retrospective meetings. Triggers: retrospective, retro, agile, sprint review, post-mortem, team feedback, continuous improvement, retrospectiva, post mortem."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 
 ## Overview
 This skill is designed to assist agile teams in conducting effective and engaging retrospectives. It provides a structured approach to facilitating these crucial meetings, from setting the stage to generating actionable insights. By leveraging a variety of templates, analysis techniques, and best practices, the Retrospective Facilitator skill helps teams to continuously improve their processes, collaboration, and overall performance. It is particularly useful for Scrum Masters, Agile Coaches, and anyone responsible for leading a team's reflection and improvement efforts.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: retrospective, retro, agile, sprint review, post-mortem, team feedback, continuous improvement, retrospectiva, post mortem, facilitate retrospective, run a retro
+- Phrases: "facilitate a retrospective", "run a sprint review", "conduct a post-mortem", "gather team feedback", "improve our sprint process", "facilitar uma retrospectiva", "conduzir uma retrospectiva"
+- Context: Any discussion about reviewing a past work period (like a sprint or project), identifying areas for improvement, and creating action plans for the team.
+
+**Example user queries that trigger this skill:**
+- "We just finished our sprint, I need to run a retrospective."
+- "Can you help me facilitate a post-mortem for the recent outage?"
+- "Quero fazer a retrospectiva do nosso último projeto."
+- "What are some good templates for a team feedback session?"
 
 ## When to Use This Skill
 This skill is most valuable in the following scenarios:
@@ -75,7 +88,7 @@ The skill can maintain a history of past retrospectives, allowing the team to tr
 
 4.  **Facilitate the Discussion:** Once the feedback has been collected, the facilitator will guide the team through a discussion of the items. The skill can help to keep the conversation focused and productive.
 
-5.  **Generate Actionable Insights:** After the discussion, the skill will help the team to identify the most important themes and generate concrete, actionable improvement items. This may involve affinity grouping, dot voting, or root cause analysis.
+5.  **Generate Actionable Insights:** After the discussion, a skill will help the team to identify the most important themes and generate concrete, actionable improvement items. This may involve affinity grouping, dot voting, or root cause analysis.
 
 6.  **Assign Ownership and Due Dates:** For each action item, the team should assign an owner and a due date. The skill will record this information and track the status of each item.
 

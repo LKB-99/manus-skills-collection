@@ -1,7 +1,6 @@
-
 ---
 name: ai-agents-builder
-description: Create autonomous AI agents using frameworks like LangChain, AutoGPT, and CrewAI.
+description: "Create autonomous AI agents with LangChain, AutoGPT, and CrewAI. Use this skill to build, customize, or deploy AI agents, intelligent applications, or multi-agent systems. Triggers: AI agent, autonomous agent, LangChain, AutoGPT, CrewAI, multi-agent system, agentic AI, criar agente de IA, agente autônomo."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,6 +11,19 @@ metadata:
 
 ## Overview
 This skill empowers you to build, customize, and deploy autonomous AI agents. Leveraging powerful frameworks like LangChain, AutoGPT, and CrewAI, you can create sophisticated agents capable of complex reasoning, tool use, and collaborative task execution. Whether you're a developer looking to integrate AI into your applications or a researcher exploring the frontiers of agentic AI, this skill provides the necessary tools and knowledge to bring your ideas to life.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: AI agent, autonomous agent, LangChain, AutoGPT, CrewAI, multi-agent system, agentic AI, multi-agent, intelligent agent, criar agente de IA, agente autônomo, agende de IA, criar um agente
+- Phrases: "build an AI agent", "create an autonomous agent", "develop a multi-agent system", "use LangChain to build an agent", "how to use AutoGPT", "implement CrewAI", "quero criar um agente de IA", "como construir um agente autônomo"
+- Context: Any discussion about creating, developing, or deploying AI agents, whether for automation, application integration, or research.
+
+**Example user queries that trigger this skill:**
+- "I want to build an AI agent to automate my research workflow."
+- "How can I use LangChain to create a customer support agent?"
+- "Can you help me set up a multi-agent system with CrewAI?"
+- "Quero criar um agente de IA para me ajudar a gerenciar meus e-mails."
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:
@@ -145,8 +157,8 @@ from crewai import Agent
 researcher = Agent(
   role='Senior Research Analyst',
   goal='Uncover cutting-edge developments in AI and data science',
-  backstory=('You are a Senior Research Analyst at a top tech think tank. ' 
-             'Your expertise lies in identifying emerging trends. ' 
+  backstory=('You are a Senior Research Analyst at a top tech think tank. ' \
+             'Your expertise lies in identifying emerging trends. ' \
              'You have a knack for dissecting complex data and presenting actionable insights.'),
   verbose=True,
   allow_delegation=False
@@ -155,7 +167,7 @@ researcher = Agent(
 writer = Agent(
   role='Tech Content Strategist',
   goal='Craft compelling content on tech advancements',
-  backstory=('You are a renowned Tech Content Strategist, known for your insightful and engaging articles. ' 
+  backstory=('You are a renowned Tech Content Strategist, known for your insightful and engaging articles. ' \
              'You transform complex concepts into compelling narratives.'),
   verbose=True,
   allow_delegation=True
@@ -167,15 +179,15 @@ writer = Agent(
 from crewai import Task
 
 task1 = Task(
-  description=('Conduct a comprehensive analysis of the latest advancements in AI in 2026. ' 
+  description=('Conduct a comprehensive analysis of the latest advancements in AI in 2026. ' \
                'Identify key trends, breakthrough technologies, and potential industry impacts.'),
   expected_output='A full analysis report with detailed insights.',
   agent=researcher
 )
 
 task2 = Task(
-  description=('Using the insights provided, write a blog post that highlights the most significant AI advancements. ' 
-               'Your post should be informative yet accessible, catering to a tech-savvy audience. ' 
+  description=('Using the insights provided, write a blog post that highlights the most significant AI advancements. ' \
+               'Your post should be informative yet accessible, catering to a tech-savvy audience. ' \
                'Make it sound cool, avoid complex words so it doesn\'t sound like AI.'),
   expected_output='A 1000-word blog post in markdown format.',
   agent=writer
@@ -273,31 +285,31 @@ writer = Agent(
   role='Financial News Reporter',
   goal='Write a concise and informative news article on Tesla\'s financial performance',
   backstory=("You are a financial news reporter for a major publication. You have a talent for translating "
-             "complex financial data into a clear and engaging narrative for a general audience."),
+             "complex financial data into engaging and easy-to-understand narratives."),
   verbose=True,
-  allow_delegation=True
+  allow_delegation=False,
+  tools=[search_tool]
 )
 
 # Define the tasks
-task1 = Task(
-  description=("Analyze Tesla\'s latest quarterly financial report. "
-               "Focus on revenue, net income, and earnings per share. "
-               "Compare the results to the previous quarter and the same quarter last year."),
-  expected_output="A detailed analysis of Tesla\'s financial performance, including key metrics and trends.",
+task_research = Task(
+  description='Gather and analyze the latest financial data for Tesla Inc. (TSLA). ' \
+              'Focus on revenue, net income, and earnings per share.',
+  expected_output='A detailed report on Tesla\'s financial performance with key metrics.',
   agent=researcher
 )
 
-task2 = Task(
-  description=("Write a news article based on the financial analysis. "
-               "The article should be approximately 500 words and highlight the key takeaways for investors."),
-  expected_output="A well-written news article in markdown format.",
+task_write = Task(
+  description='Write a news article based on the financial analysis of Tesla. ' \
+              'The article should be clear, concise, and engaging for a general audience.',
+  expected_output='A 500-word news article in markdown format.',
   agent=writer
 )
 
 # Create the crew
 crew = Crew(
   agents=[researcher, writer],
-  tasks=[task1, task2],
+  tasks=[task_research, task_write],
   process=Process.sequential
 )
 
@@ -306,55 +318,3 @@ result = crew.kickoff()
 
 print(result)
 ```
-
-### Example 3: A Template for a Generic Research Agent
-
-This template can be used as a starting point for building your own research agents.
-
-```python
-from crewai import Agent, Task, Crew, Process
-from langchain_community.tools import DuckDuckGoSearchRun
-
-# Define the search tool
-search_tool = DuckDuckGoSearchRun()
-
-# Define the agent
-research_agent = Agent(
-  role='Research Specialist',
-  goal='To provide accurate and well-researched information on any given topic.',
-  backstory=("You are an expert researcher with access to a vast amount of information. "
-             "You are skilled at finding, evaluating, and synthesizing information from various sources."),
-  verbose=True,
-  allow_delegation=False,
-  tools=[search_tool]
-)
-
-# Define the task
-research_task = Task(
-  description='Research the topic: {topic}',
-  expected_output='A comprehensive report on the topic, including key findings and a list of sources.',
-  agent=research_agent
-)
-
-# Create the crew
-research_crew = Crew(
-  agents=[research_agent],
-  tasks=[research_task],
-  process=Process.sequential
-)
-
-# Run the crew with a specific topic
-topic_to_research = "The impact of climate change on global food security"
-result = research_crew.kickoff(inputs={'topic': topic_to_research})
-
-print(result)
-```
-## References
-
-1.  [Top AI Agent Frameworks in 2025: LangChain, AutoGen, CrewAI ...](https://medium.com/@iamanraghuvanshi/agentic-ai-3-top-ai-agent-frameworks-in-2025-langchain-autogen-crewai-beyond-2fc3388e7dec)
-2.  [Top 7 Agentic AI Frameworks in 2026: LangChain, CrewAI, and ...](https://www.alphamatch.ai/blog/top-agentic-ai-frameworks-2026)
-3.  [CrewAI vs LangChain vs AutoGPT vs LlamaIndex: - Draft'n run](https://draftnrun.com/en/blog/250915-ai-agent-frameworks-comparison/)
-4.  [Introduction to LangChain: Build AI Agents with Python](https://academy.langchain.com/courses/foundation-introduction-to-langchain-python)
-5.  [Quickstart - CrewAI Documentation](https://docs.crewai.com/en/quickstart)
-6.  [CrewAI: A Guide With Examples of Multi AI Agent Systems - DataCamp](https://www.datacamp.com/tutorial/crew-ai)
-7.  [AutoGPT on GitHub](https://github.com/Significant-Gravitas/Auto-GPT)

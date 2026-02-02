@@ -1,6 +1,6 @@
 ---
 name: project-roadmap
-description: A skill to create and manage comprehensive project roadmaps, including milestones, tasks, dependencies, and timelines.
+description: "Creates comprehensive project roadmaps with milestones, tasks, dependencies, and timelines. Use this skill when users want to create, manage, or visualize a project plan, schedule, or timeline. Triggers: project roadmap, roadmap, project plan, timeline, Gantt chart, project schedule, cronograma, planejamento de projeto, criar roadmap."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -9,18 +9,32 @@ metadata:
 
 # Skill: Project Roadmap Creation
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: project roadmap, roadmap, project plan, timeline, Gantt chart, project schedule, cronograma, planejamento de projeto, criar roadmap, mapa do projeto, plano de projeto
+- Phrases: "create a project roadmap", "build a timeline for my project", "how to plan a project", "preciso de um cronograma", "criar um roadmap de projeto", "planejar meu projeto"
+- Context: Any discussion about planning, scheduling, or visualizing a project's lifecycle, from initiation to completion.
+
+**Example user queries that trigger this skill:**
+- "I need to create a project roadmap for my new software."
+- "Can you help me build a Gantt chart for my marketing campaign?"
+- "Quero planejar o lançamento de um produto e preciso de um cronograma."
+- "Como posso visualizar as dependências do meu projeto?"
+
 ## Overview
 This skill empowers Manus to create detailed, structured, and actionable project roadmaps. It leverages a combination of planning methodologies and tool-agnostic templates to generate roadmaps that are easy to understand, track, and maintain. A project roadmap is a high-level visual summary that maps out the vision, direction, priorities, and progress of a product or project over time. This skill is designed to take a user's project goals and break them down into a clear sequence of milestones, tasks, and dependencies, providing a clear path from conception to completion.
 
 ## When to Use This Skill
-This skill is particularly useful in the following scenarios:
 
-- **Project Initiation:** When starting a new project and needing to define the scope, timeline, and key deliverables.
-- **Strategic Planning:** To align stakeholders on the project's vision, goals, and priorities.
-- **Progress Tracking:** To monitor the progress of a project against its planned milestones and timeline.
-- **Resource Allocation:** To visualize project phases and allocate resources more effectively.
-- **Communication:** To provide a clear and concise overview of the project to team members, executives, and other stakeholders.
-- **Dependency Management:** When a project has complex interdependencies between tasks that need to be clearly mapped out.
+ALWAYS use this skill when the user mentions keywords related to project planning and visualization. This skill is ideal for creating, managing, and visualizing project roadmaps, timelines, and schedules.
+
+**Use this skill for:**
+- Creating detailed project roadmaps.
+- Generating Gantt charts and timelines.
+- Breaking down project goals into milestones and tasks.
+- Mapping task dependencies.
+- Visualizing project progress and schedules.
 
 ## Core Capabilities
 

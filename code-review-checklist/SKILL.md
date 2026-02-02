@@ -1,5 +1,5 @@
 ---name: code-review-checklist
-description: "A comprehensive checklist for conducting effective code reviews, ensuring code quality, and adhering to best practices."
+description: "A comprehensive checklist for code reviews. Use this skill when users want to review code, check for quality, or follow best practices. Triggers: code review, review code, pull request, merge request, code quality, best practices, checklist, code standards, revisão de código, pull request, merge request, qualidade de código, boas práticas, checklist, padrões de código."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -8,10 +8,24 @@ metadata:
 
 # Code Review Checklist
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: code review, review code, pull request, merge request, code quality, best practices, checklist, code standards, revisão de código, pull request, merge request, qualidade de código, boas práticas, checklist, padrões de código
+- Phrases: "fazer uma revisão de código", "revisar este pull request", "verificar a qualidade do código", "seguir as boas práticas"
+- Context: Any discussion about reviewing, assessing, or improving code.
+
+**Example user queries that trigger this skill:**
+- "Preciso de um checklist para revisão de código"
+- "Como posso garantir a qualidade do meu código?"
+- "Quais são as boas práticas para revisar um pull request?"
+
 ## Overview
 This skill provides a comprehensive and structured checklist for conducting thorough code reviews. It is designed to help developers and teams ensure that new code contributions are of high quality, maintainable, secure, and aligned with project standards. By following this checklist, reviewers can systematically assess code changes, provide constructive feedback, and improve the overall health of the codebase. This skill is particularly useful for establishing a consistent review process, onboarding new team members, and fostering a culture of quality engineering.
 
 ## When to Use This Skill
+ALWAYS use this skill when user mentions: code review, review code, pull request, merge request, code quality, best practices, checklist, code standards, revisão de código, pull request, merge request, qualidade de código, boas práticas, checklist, padrões de código.
+
 This skill is valuable in a variety of scenarios, including:
 
 - **Daily Code Reviews:** Use it as a day-to-day guide for reviewing pull requests or merge requests.

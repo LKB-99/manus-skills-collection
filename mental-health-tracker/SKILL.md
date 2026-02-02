@@ -1,6 +1,6 @@
 ---
 name: mental-health-tracker
-description: A skill for tracking mental health through daily journaling, mood logging, and guided reflections to identify patterns and promote well-being.
+description: "Track mental health via journaling, mood logging, and reflections. Use when users want to track moods, journal thoughts, or reflect on well-being. Triggers: mental health, journal, mood, feeling, reflection, therapy, stress, anxiety, diário, humor, sentimento, terapia, estresse, ansiedade."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,15 +12,28 @@ metadata:
 ## Overview
 The Mental Health Tracker skill is designed to help you proactively manage your mental well-being. By leveraging daily journaling, mood tracking, and guided reflection prompts, this skill provides a structured yet flexible system to monitor your emotional state, identify triggers, and recognize patterns in your thoughts and feelings over time. Consistent use of this skill can lead to greater self-awareness, improved emotional regulation, and a more mindful approach to daily life. It serves as a private, personal space for introspection, helping you build a comprehensive record of your mental health journey.
 
-## When to Use This Skill
-This skill is particularly useful in the following situations:
+## Automatic Triggers
 
-- **Daily Self-Reflection:** When you want to establish a routine of checking in with yourself to understand your emotional state.
-- **Managing Stress and Anxiety:** When you are experiencing periods of high stress or anxiety and need a tool to externalize and process your thoughts.
-- **Identifying Emotional Patterns:** When you want to understand the connections between your daily activities, thoughts, and moods.
-- **Preparing for Therapy:** When you want to collect detailed information about your experiences to share with a mental health professional.
-- **Tracking Progress:** When you are working on specific mental health goals (e.g., reducing negative self-talk, practicing gratitude) and want to monitor your progress.
-- **Promoting Mindfulness:** When you aim to be more present and aware of your inner world on a day-to-day basis.
+**ALWAYS activate this skill when user mentions:**
+- Keywords: mental health, journal, mood, feeling, reflection, therapy, stress, anxiety, well-being, diário, humor, sentimento, reflexão, terapia, estresse, ansiedade, bem-estar, registrar humor, escrever no diário, saúde mental.
+- Phrases: "track my mood", "write in my journal", "how am I feeling?", "log my feelings", "I feel stressed", "I'm feeling anxious", "quero registrar meu humor", "escrever no meu diário", "como estou me sentindo?", "estou estressado", "estou ansioso".
+- Context: Any discussion about monitoring emotional state, recording thoughts and feelings, or proactively managing mental well-being.
+
+**Example user queries that trigger this skill:**
+- "I want to start a journal to track my mental health."
+- "Can you help me log my mood every day?"
+- "Tive um dia difícil, preciso escrever sobre isso."
+- "Quero refletir sobre meus sentimentos."
+
+## When to Use This Skill
+
+**ALWAYS use this skill when user mentions:**
+- Daily self-reflection or checking in on their emotional state.
+- Managing stress, anxiety, or difficult emotions.
+- Identifying emotional patterns or triggers.
+- Preparing for therapy by collecting information.
+- Tracking progress on mental health goals.
+- Practicing mindfulness and self-awareness.
 
 ## Core Capabilities
 
@@ -176,4 +189,3 @@ Here are some practical examples of how you might interact with the Mental Healt
 - **Atomic Habits by James Clear:** An excellent resource for building the consistent habits required to make this skill effective.
 - **Mindful.org:** A great online resource for learning about mindfulness and meditation practices that can complement your journaling.
 - **The Artist's Way by Julia Cameron:** Introduces the concept of "Morning Pages," a form of daily free-form writing that aligns well with the journaling capability of this skill.
-

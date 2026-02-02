@@ -1,6 +1,6 @@
 ---
 name: contract-generator
-description: A skill to generate customized legal contracts using validated templates.
+description: "Generate customized legal contracts using validated templates. Use this skill when users need to create agreements, NDAs, service contracts, or other legal documents. Triggers: contract, agreement, legal document, NDA, non-disclosure, service agreement, lease, terms of service, contrato, acordo, documento legal, distrato, aditivo contratual."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,15 +12,32 @@ metadata:
 ## Overview
 The Contract Generator skill empowers Manus to create customized legal agreements by leveraging a library of pre-validated templates. This skill is designed to streamline the process of drafting common contracts, ensuring accuracy, compliance, and efficiency. By providing specific details and parameters, users can generate tailored contracts for various situations, reducing the need for manual drafting and minimizing legal risks. This skill is ideal for freelancers, small businesses, and individuals who require legally sound documents without the high cost of hiring a lawyer for standard agreements.
 
-## When to Use This Skill
-This skill is particularly useful in the following scenarios:
+## Automatic Triggers
 
-*   **Freelance and Consulting Engagements:** Quickly generate service agreements, non-disclosure agreements (NDAs), and statements of work (SOWs) for new client projects.
-*   **Small Business Operations:** Create employment contracts, independent contractor agreements, and terms of service for your website or application.
-*   **Rental Agreements:** Draft residential or commercial lease agreements with specific clauses for rent, security deposits, and property rules.
-*   **Sales and Service Transactions:** Generate sales contracts, purchase orders, and service level agreements (SLAs) to formalize business transactions.
-*   **Intellectual Property:** Create licensing agreements for software, creative works, or other forms of intellectual property.
-*   **Personal Agreements:** Draft personal loan agreements, promissory notes, or cohabitation agreements.
+**ALWAYS activate this skill when a user mentions:**
+- Keywords: contract, agreement, legal document, NDA, non-disclosure, service agreement, lease, terms of service, bill of sale, promissory note, SOW, statement of work, aditivo, distrato
+- Palavras-chave: contrato, acordo, documento legal, termo de confidencialidade, contrato de serviço, contrato de aluguel, termos de serviço, recibo de venda, nota promissória, aditivo contratual, distrato social
+- Phrases: "create a contract", "draft an agreement", "need an NDA", "generate a lease", "write terms of service"
+- Frases: "criar um contrato", "elaborar um acordo", "preciso de um termo de confidencialidade", "gerar um contrato de aluguel", "escrever os termos de serviço"
+- Context: Any discussion about drafting, creating, or generating formal legal agreements between parties.
+
+**Example user queries that trigger this skill:**
+- "I need to create a contract for a freelance project."
+- "Can you help me draft a non-disclosure agreement?"
+- "Preciso de um contrato de aluguel para um apartamento."
+- "Como eu crio os termos de serviço para o meu site?"
+
+## When to Use This Skill
+
+**ALWAYS use this skill when the user wants to:**
+- Generate a Non-Disclosure Agreement (NDA)
+- Create an Independent Contractor or Service Agreement
+- Draft a Residential or Commercial Lease Agreement
+- Formalize a transaction with a Bill of Sale or Purchase Order
+- Create website documents like Terms and Conditions or a Privacy Policy
+- Draft personal agreements like a Promissory Note or Loan Agreement
+- Create a Statement of Work (SOW)
+- Elaborar um aditivo contratual ou um distrato social.
 
 ## Core Capabilities
 

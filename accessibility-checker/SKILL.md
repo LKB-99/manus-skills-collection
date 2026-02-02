@@ -1,6 +1,6 @@
 ---
 name: accessibility-checker
-description: A skill to check web accessibility following the Web Content Accessibility Guidelines (WCAG).
+description: "Checks web accessibility using WCAG. Use this skill when users want to check, audit, or fix web accessibility issues, or test against WCAG standards. Triggers: accessibility, a11y, WCAG, accessibility audit, accessibility checker, web accessibility, acessibilidade, acessibilidade web, auditoria de acessibilidade."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,13 @@ metadata:
 
 ## Overview
 This skill provides a comprehensive framework for evaluating web accessibility based on the Web Content Accessibility Guidelines (WCAG) 2.1. It is designed to assist developers, designers, and content creators in identifying and fixing accessibility barriers on their websites and web applications. By using a combination of automated checks and guided manual inspections, this skill helps ensure that digital products are usable by everyone, including people with disabilities. The ultimate goal is to foster a more inclusive and accessible web for all.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: accessibility, a11y, WCAG, accessibility audit, accessibility checker, web accessibility, acessibilidade, acessibilidade web, auditoria de acessibilidade, verificação de acessibilidade
+- Phrases: "check my website's accessibility", "run an accessibility audit", "is my site WCAG compliant?", "verificar a acessibilidade do meu site", "fazer uma auditoria de acessibilidade", "meu site está em conformidade com o WCAG?"
+- Context: Any discussion about making websites or web applications usable for people with disabilities.
 
 ## When to Use This Skill
 This skill is valuable in a variety of scenarios throughout the product development lifecycle:

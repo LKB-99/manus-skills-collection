@@ -1,6 +1,6 @@
 ---
 name: invoice-generator
-description: Create professional invoices and receipts with automatic calculations.
+description: "Create professional invoices and receipts with automatic calculations. Use this skill when users want to generate, create, or manage invoices, receipts, or bills. Triggers: invoice, receipt, bill, billing, generate invoice, criar fatura, nota fiscal, recibo."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,18 @@ metadata:
 
 ## Overview
 This skill is designed to streamline the process of creating and managing professional invoices and receipts. It automates calculations for totals, taxes, and discounts, and provides customizable templates to ensure a consistent and professional brand image. Use this skill to generate invoices from scratch, from templates, or by extracting data from other documents. It is ideal for freelancers, small business owners, and anyone who needs to bill clients for services or products.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: invoice, receipt, bill, billing, faturar, fatura, nota fiscal, recibo
+- Phrases: "create an invoice", "generate a receipt", "how to bill a client", "criar uma fatura", "gerar um recibo"
+- Context: Any discussion about creating or managing financial documents for transactions.
+
+**Example user queries that trigger this skill:**
+- "I need to create an invoice for a client."
+- "Can you help me generate a receipt for a sale?"
+- "Como eu faço para criar uma nota fiscal para um serviço?"
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:

@@ -1,6 +1,6 @@
 ---
 name: goal-setting
-description: Define and track goals using OKR and SMART methodologies.
+description: "Define and track goals using OKR and SMART methodologies. Use this skill when users want to set, track, or manage goals, objectives, or key results. Triggers: goal setting, OKR, SMART, objectives, key results, metas, objetivos, resultados-chave."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,7 +12,22 @@ metadata:
 ## Overview
 This skill empowers you to define, track, and achieve your goals effectively using two powerful methodologies: **Objectives and Key Results (OKR)** and **SMART Goals**. Whether you're an individual looking to improve personal productivity or a team leader aiming to align your team's efforts with organizational objectives, this skill provides the structure and guidance you need to turn your aspirations into reality. By leveraging the principles of OKR and SMART, you can set clear, ambitious, and measurable goals, ensuring that you and your team are always focused on what matters most.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: goal, goals, objective, objectives, key result, key results, OKR, SMART, meta, metas, objetivo, objetivos, resultado-chave, resultados-chave
+- Phrases: "set a goal", "track my goals", "define objectives", "create OKRs", "SMART goals", "definir meta", "acompanhar metas", "criar objetivos"
+- Context: Any discussion about personal, team, or project goal setting, performance reviews, or strategic planning.
+
+**Example user queries that trigger this skill:**
+- "I want to set some goals for my team for the next quarter."
+- "Can you help me create SMART goals for my personal development?"
+- "Quero definir os OKRs para o meu projeto."
+- "Como posso acompanhar o progresso das minhas metas?"
+
 ## When to Use This Skill
+**ALWAYS use this skill when user mentions:** goal setting, OKR, SMART, objectives, key results, metas, objetivos, resultados-chave.
+
 This skill is particularly useful in the following scenarios:
 
 *   **Annual or Quarterly Planning:** When you need to set strategic goals for the upcoming year or quarter.

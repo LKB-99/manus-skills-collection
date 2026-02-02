@@ -1,6 +1,6 @@
 ---
 name: ebook-creator
-description: Create professional e-books with formatting, cover art, and publishing to various platforms.
+description: "Use this skill when users want to write, format, or publish e-books, digital books, or Kindle content. Triggers: e-book, ebook, kindle, epub, digital book, publish book, book cover, book formatting, self-publishing, amazon kdp, criar e-book, livro digital."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,12 +12,20 @@ metadata:
 ## Overview
 This skill empowers Manus to create complete, professional-grade e-books from various source materials. It handles everything from initial content structuring and formatting to cover design and final publication on popular e-book platforms. Use this skill when you need to transform raw text, articles, or research into a polished, distributable digital book.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: e-book, ebook, kindle, epub, mobi, digital book, publish book, book cover, book formatting, self-publishing, amazon kdp, criar e-book, livro digital, formatar livro, publicar livro, capa de livro.
+- Phrases: "create an e-book", "format my book", "publish on Amazon", "design a book cover", "criar um e-book", "formatar meu livro", "publicar na Amazon", "capa para meu e-book".
+- Context: Any discussion about writing, formatting, designing, or publishing digital books, especially for platforms like Kindle.
+
 ## When to Use This Skill
-- **Content Repurposing:** Convert a series of blog posts, articles, or a research paper into a cohesive e-book.
-- **Lead Generation:** Create a valuable e-book as a lead magnet to attract and capture potential customers.
-- **Digital Product Creation:** Develop and publish an e-book for sale on platforms like Amazon Kindle Direct Publishing (KDP), Google Play Books, or Apple Books.
-- **Documentation:** Compile technical documentation, guides, or manuals into a user-friendly, portable e-book format.
-- **Personal Projects:** Turn a personal story, a collection of recipes, or a family history into a beautifully formatted e-book to share with others.
+**ALWAYS use this skill when user mentions:**
+- **Content Repurposing:** Converting blog posts, articles, or research into an e-book.
+- **Lead Generation:** Creating an e-book as a lead magnet.
+- **Digital Product Creation:** Developing an e-book for sale (e.g., on Amazon KDP).
+- **Documentation:** Compiling guides or manuals into an e-book format.
+- **Personal Projects:** Turning personal stories or collections into a shareable e-book.
 
 ## Core Capabilities
 
@@ -229,7 +237,7 @@ Here is an example of a list:
 Include images to illustrate concepts:
 
 ![A descriptive caption for the image](../images/relevant-image.png)
-*Figure 1: A descriptive caption.* 
+*Figure 1: A descriptive caption.*
 
 ## Code Examples
 

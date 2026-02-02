@@ -1,6 +1,6 @@
 ---
 name: sleep-analyzer
-description: An in-depth analysis of sleep patterns with personalized sleep hygiene recommendations.
+description: "Use this skill when users want to analyze their sleep data, understand sleep patterns, or get personalized recommendations to improve sleep quality. Triggers: sleep analysis, sleep data, sleep quality, sleep patterns, sleep hygiene, sleep tracker, improve sleep, sono, análise de sono, qualidade do sono, melhorar o sono."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,8 +12,21 @@ metadata:
 ## Overview
 This skill provides a comprehensive analysis of your sleep data, identifying patterns and offering personalized recommendations to improve your sleep quality. By leveraging data from sleep trackers, this skill helps you understand your sleep architecture, including sleep stages, heart rate variability (HRV), and sleep efficiency. It then provides evidence-based sleep hygiene recommendations to help you get more restful and restorative sleep.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: sleep analysis, sleep data, sleep quality, sleep patterns, sleep hygiene, sleep tracker, improve sleep, sleep score, HRV, sleep stages, deep sleep, REM sleep, sono, análise de sono, qualidade do sono, dados do sono, higiene do sono, melhorar o sono, pontuação do sono, estágios do sono.
+- Phrases: "analyze my sleep", "how can I improve my sleep?", "understand my sleep data", "what do my sleep stages mean?", "analisar meu sono", "como posso melhorar meu sono?", "entender meus dados de sono".
+- Context: Any discussion about analyzing data from sleep trackers (like smartwatches or rings), improving sleep quality, or understanding sleep metrics.
+
+**Example user queries that trigger this skill:**
+- "Can you analyze my sleep data from my Oura ring?"
+- "I'm feeling tired all the time, how can I improve my sleep quality?"
+- "Quero entender os dados do meu sono do Apple Watch."
+- "Meu sono profundo está baixo, o que posso fazer para melhorar?"
+
 ## When to Use This Skill
-This skill is particularly useful in the following scenarios:
+**ALWAYS use this skill when user mentions:**
 
 *   **Analyzing Sleep Tracker Data:** You have data from a sleep tracker (like a smartwatch or a dedicated sleep sensor) and want to understand what it means.
 *   **Improving Sleep Quality:** You're feeling tired despite getting enough hours of sleep and want to improve the quality of your rest.

@@ -1,7 +1,6 @@
-
 ---
 name: seo-analyzer
-description: A comprehensive SEO analysis skill that covers keyword research, backlink analysis, and on-page optimization.
+description: "Perform comprehensive SEO analysis including keyword research, backlink analysis, and on-page optimization. Use this skill when users want to analyze or improve website SEO, research keywords, analyze backlinks, or perform an on-page audit. Triggers: SEO, search engine optimization, keyword research, backlink analysis, on-page SEO, SERP, website ranking, otimização de sites, pesquisa de palavras-chave, análise de backlinks."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -14,18 +13,29 @@ metadata:
 
 The SEO Analyzer skill provides a complete suite of tools to analyze and optimize a website's Search Engine Optimization (SEO). It empowers Manus to conduct in-depth keyword research, perform comprehensive backlink analysis, and execute detailed on-page SEO audits. By leveraging this skill, Manus can identify opportunities for improvement, track competitor strategies, and provide actionable recommendations to enhance a website's visibility and ranking on search engine results pages (SERPs). This skill is designed for anyone looking to improve their website's organic search performance, from small business owners to experienced digital marketers.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: SEO, search engine optimization, keyword research, backlink analysis, on-page SEO, SERP, website ranking, otimização de sites, pesquisa de palavras-chave, análise de backlinks, auditoria de SEO, ranqueamento no Google
+- Phrases: "analisar o SEO do meu site", "melhorar o ranking no Google", "pesquisar palavras-chave para o meu blog", "fazer uma auditoria de SEO", "analise de concorrentes"
+- Context: Any discussion about improving a website's performance on search engines.
+
+**Example user queries that trigger this skill:**
+- "Como posso melhorar o SEO do meu e-commerce?"
+- "Preciso de ajuda com pesquisa de palavras-chave para meu novo site."
+- "Você pode fazer uma análise de backlinks para o meu domínio?"
+
 ## When to Use This Skill
 
-This skill is particularly useful in the following scenarios:
-
-- **Improving Website Rankings:** When you want to improve your website's ranking on Google and other search engines for specific keywords.
-- **Keyword Research:** When you need to identify the most relevant and valuable keywords to target for your content and marketing campaigns.
-- **Competitor Analysis:** When you want to analyze your competitor's SEO strategy, including their top keywords and backlink profile, to find new opportunities.
-- **On-Page SEO Audits:** When you need to perform a comprehensive on-page SEO audit to identify and fix technical issues that may be harming your search performance.
-- **Content Optimization:** When you want to optimize your website's content to make it more search engine friendly and engaging for users.
-- **Link Building:** When you are looking for new link-building opportunities to increase your website's authority and trust.
-- **New Website Launch:** When you are launching a new website and want to ensure it is optimized for search engines from the start.
-- **Performance Tracking:** When you want to track your SEO performance over time and measure the impact of your optimization efforts.
+**ALWAYS use this skill when user mentions:**
+- Improving website rankings on search engines.
+- Conducting keyword research to find relevant terms.
+- Analyzing competitor SEO strategies.
+- Performing on-page SEO audits to fix technical issues.
+- Optimizing web content for search engines.
+- Finding link-building opportunities.
+- Optimizing a new website for search from launch.
+- Tracking SEO performance and the impact of optimizations.
 
 ## Core Capabilities
 
@@ -135,87 +145,3 @@ To get the most out of the SEO Analyzer skill, follow these best practices:
 - **Be Patient and Consistent:** SEO is a long-term game. It takes time to see results from your optimization efforts. Be patient, consistent, and track your progress over time. Don't get discouraged if you don't see a significant improvement in your rankings overnight.
 - **Stay Up-to-Date with SEO Trends:** The world of SEO is constantly changing. Stay up-to-date with the latest trends and algorithm updates from Google to ensure your SEO strategy remains effective.
 - **Use a Variety of Tools:** Don't rely on a single tool for your SEO analysis. Use a variety of tools to get a more comprehensive and accurate picture of your website's SEO performance. Each tool has its own strengths and weaknesses, so using multiple tools can help you cross-reference data and make more informed decisions.
-- **Document Everything:** Keep a detailed record of your SEO activities, including the keywords you are targeting, the backlinks you have built, and the on-page optimizations you have made. This will help you track your progress, identify what is working, and make data-driven decisions.
-
-## Examples
-
-### Example 1: Basic Keyword Research for a New Blog
-
-**Goal:** Find a list of low-competition keywords for a new blog about sustainable gardening.
-
-**Workflow:**
-
-1.  **Brainstorm Seed Keywords:** `sustainable gardening`, `eco-friendly gardening`, `organic gardening`.
-
-2.  **Use the `search` tool to get ideas:**
-    ```bash
-    search(type=\'info\', queries=["beginner\'s guide to sustainable gardening", "sustainable gardening techniques for small spaces"])
-    ```
-
-3.  **Use the `browser` to access a keyword tool (e.g., Ubersuggest):**
-    -   Navigate to the tool.
-    -   Enter the seed keywords.
-    -   Filter the results to show keywords with a low SEO difficulty.
-
-4.  **Save the results:**
-    ```python
-    file(action=\'write\', path=\'/home/ubuntu/gardening_keywords.csv\', text=\'Keyword,Search Volume,SEO Difficulty\n...\')
-    ```
-
-### Example 2: Competitor Backlink Analysis
-
-**Goal:** Find link-building opportunities by analyzing a competitor's backlink profile.
-
-**Workflow:**
-
-1.  **Identify the competitor:** `competitor.com`
-
-2.  **Use the `browser` to access a backlink analysis tool (e.g., Ahrefs):**
-    -   Navigate to the tool.
-    -   Enter the competitor's domain.
-
-3.  **Analyze the results:**
-    -   Look at the "Referring Domains" report to see which websites are linking to the competitor.
-    -   Filter the results to show high-authority domains.
-
-4.  **Identify opportunities:**
-    -   Look for websites that are relevant to your niche and that you could potentially get a link from.
-
-5.  **Save the list of opportunities:**
-    ```python
-    file(action=\'write\', path=\'/home/ubuntu/link_building_opportunities.txt\', text=\'Website URL,Contact Info\n...\')
-    ```
-
-### Example 3: On-Page SEO Audit of a Product Page
-
-**Goal:** Optimize a product page for a specific keyword.
-
-**Workflow:**
-
-1.  **Identify the page and keyword:** `https://example.com/product`, `handmade leather wallet`
-
-2.  **Use the `browser` to inspect the page:**
-    -   Check the title tag, meta description, and headings.
-    -   Read the content to see if it is well-written and includes the keyword.
-    -   Check the images to see if they have alt text.
-
-3.  **Use an online tool to check page speed:**
-    -   Navigate to Google PageSpeed Insights.
-    -   Enter the page URL.
-
-4.  **Create a list of recommendations:**
-    -   Rewrite the title tag to include the keyword at the beginning.
-    -   Add the keyword to the H1 tag.
-    -   Add more descriptive alt text to the images.
-    -   Compress the images to improve page speed.
-
-5.  **Save the recommendations:**
-    ```python
-    file(action=\'write\', path=\'/home/ubuntu/product_page_audit.txt\', text=\'**On-Page SEO Recommendations for Product Page**\n\n- ...\')
-    ```
-
-## References
-
-- [Keyword research for SEO: the ultimate guide by Yoast](https://yoast.com/keyword-research-ultimate-guide/)
-- [Backlink Analysis: How We Do It (+Tools & Best Practices) by Embarque](https://www.embarque.io/post/backlink-analysis-how-we-do-it-tools-best-practices)
-- [On-Page SEO Checklist: The Complete Task List for 2026 by Semrush](https://www.semrush.com/blog/on-page-seo-checklist/)

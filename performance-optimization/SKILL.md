@@ -1,7 +1,7 @@
 
 ---
 name: performance-optimization
-description: A comprehensive guide to diagnosing and improving the performance of web and mobile applications.
+description: "A comprehensive guide to diagnosing and improving the performance of web and mobile applications. Use this skill when users want to optimize speed, analyze bottlenecks, or improve responsiveness of their applications. Triggers: performance optimization, slow page load, high bounce rates, mobile performance, pre-launch audit, post-launch monitoring, improve SEO, otimização de performance, site lento, app lento, melhorar velocidade."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,9 +12,23 @@ metadata:
 
 ## Overview
 This skill provides a structured workflow for identifying, analyzing, and resolving performance bottlenecks in web and mobile applications. Performance is a critical feature that directly impacts user experience, conversion rates, and search engine ranking. A slow application can lead to user frustration, abandonment, and a negative brand perception. This guide covers a wide range of optimization techniques, from front-end rendering and asset loading to back-end code efficiency and infrastructure scaling. By using this skill, you can systematically improve your application's speed, responsiveness, and resource consumption, leading to a better user experience and improved business metrics.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: performance optimization, slow page load, high bounce rates, mobile performance, pre-launch audit, post-launch monitoring, improve SEO, otimização de performance, site lento, app lento, melhorar velocidade, performance audit, webpagetest, lighthouse
+- Phrases: "my website is slow", "how to improve my app speed", "meu site está lento", "como otimizar a performance", "analisar gargalos de performance"
+- Context: Any discussion about slow application speed, responsiveness issues, or performance analysis.
+
+**Example user queries that trigger this skill:**
+- "My e-commerce site is very slow during checkout."
+- "How can I improve the performance of my React Native app?"
+- "Preciso de ajuda para otimizar a velocidade do meu blog em WordPress."
+
 _"
 
 ## When to Use This Skill
+**ALWAYS use this skill when user mentions:**
 This skill is essential in the following scenarios:
 
 - **Slow Page Load Times:** When users report that your website or web application is taking too long to load.

@@ -1,6 +1,6 @@
 ---
 name: gantt-chart
-description: A comprehensive skill for generating, customizing, and managing Gantt charts to visualize project schedules, track progress, and manage dependencies.
+description: "Use this skill when users want to create, manage, or visualize project schedules with Gantt charts. Triggers: Gantt chart, cronograma, project plan, project schedule, task management, timeline, roadmap, gráfico de Gantt, planejamento de projeto."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,8 +12,20 @@ metadata:
 ## Overview
 A Gantt chart is a powerful project management tool that provides a visual representation of a project schedule over time. It is a type of bar chart that illustrates the start and finish dates of the terminal elements and summary elements of a project. This skill enables Manus to create, modify, and analyze Gantt charts programmatically, helping users to plan, coordinate, and track specific tasks in a project effectively. By leveraging this skill, users can define tasks, set durations, establish dependencies, and visualize the entire project timeline, making it an indispensable tool for project managers, team leads, and anyone involved in project planning and execution.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: Gantt chart, cronograma, project plan, project schedule, task management, timeline, roadmap, gráfico de Gantt, planejamento de projeto, project timeline, task scheduling
+- Phrases: "criar um gráfico de Gantt", "gerenciar meu cronograma de projeto", "visualizar o cronograma do projeto", "preciso de um roadmap do projeto"
+- Context: Any discussion about creating, visualizing, or managing project timelines and task schedules.
+
+**Example user queries that trigger this skill:**
+- "Quero criar um cronograma para meu projeto de TCC"
+- "Como posso visualizar as dependências das tarefas do meu projeto?"
+- "Preciso de um gráfico de Gantt para a apresentação de resultados"
+
 ## When to Use This Skill
-This skill is particularly useful in the following scenarios:
+ALWAYS use this skill when user mentions: Gantt chart, cronograma, project plan, project schedule, task management, timeline, roadmap, gráfico de Gantt, planejamento de projeto. This skill is particularly useful in the following scenarios:
 
 - **Project Planning:** When you need to create a detailed project schedule from scratch, outlining all tasks, their durations, and their start and end dates.
 - **Task Scheduling:** To visualize the timeline of tasks and understand how they overlap and interconnect.
@@ -244,115 +256,14 @@ def create_gantt_chart(tasks):
     plt.xlabel('Date')
     plt.ylabel('Tasks')
     plt.grid(True)
-    plt.tight_layout()
-    plt.savefig('gantt_chart.png')
     plt.show()
 
 # Example Usage:
 tasks = [
-  {'name': 'Task 1', 'start': '2026-01-01', 'finish': '2026-01-15'},
-  {'name': 'Task 2', 'start': '2026-01-10', 'finish': '2026-02-01'},
-  {'name': 'Task 3', 'start': '2026-02-02', 'finish': '2026-02-15'}
+    {'name': 'Task 1', 'start': '2026-01-01', 'finish': '2026-01-10'},
+    {'name': 'Task 2', 'start': '2026-01-05', 'finish': '2026-01-15'},
+    {'name': 'Task 3', 'start': '2026-01-12', 'finish': '2026-01-20'}
 ]
 
 create_gantt_chart(tasks)
 ```
-
-### JavaScript with Mermaid.js
-Mermaid.js is a great tool for generating diagrams and charts from text in a Markdown-like syntax. It can be easily used within a web browser or a Node.js environment.
-
-**HTML File with Mermaid.js:**
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Gantt Chart with Mermaid.js</title>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
-</head>
-<body>
-    <h1>Project Plan</h1>
-    <div class="mermaid">
-        gantt
-            title A Gantt Diagram
-            dateFormat  YYYY-MM-DD
-            section Section
-            A task           :a1, 2026-01-01, 30d
-            Another task     :after a1  , 20d
-            section Another
-            Task in sec      :2026-01-12  , 12d
-            another task      : 24d
-    </div>
-</body>
-</html>
-```
-
-## References
-
--   [1] [Wikipedia: Gantt Chart](https://en.wikipedia.org/wiki/Gantt_chart) - A detailed overview of the history and components of Gantt charts.
--   [2] [Gantt.com](https://www.gantt.com/) - A resource hub for everything related to Gantt charts.
--   [3] [Plotly: Gantt Charts in Python](https://plotly.com/python/gantt/) - Documentation for creating Gantt charts using the Plotly Python library.
--   [4] [Mermaid.js Documentation](https://mermaid-js.github.io/mermaid/#/gantt) - Official documentation for the Mermaid.js Gantt chart syntax.
--   [5] [Matplotlib: Creating a Gantt chart with Matplotlib](https://matplotlib.org/stable/gallery/lines_bars_and_markers/gantt.html) - A tutorial on building Gantt charts from scratch using Matplotlib.
-
-## Advanced Features
-
-### Critical Path Analysis
-This skill can identify the critical path of a project—the sequence of tasks that determines the project's total duration. Tasks on the critical path have zero slack, meaning any delay in these tasks will delay the entire project. Manus can highlight the critical path on the Gantt chart, helping project managers focus on the most crucial tasks.
-
-**How it works:**
-1.  The user provides the task list with durations and dependencies.
-2.  Manus constructs a directed acyclic graph (DAG) of the tasks.
-3.  It calculates the earliest start/finish and latest start/finish times for each task.
-4.  The critical path is identified as the path where the earliest and latest times are the same.
-
-**Example User Command:**
-`"Manus, analyze the critical path for my project and highlight it on the Gantt chart."`
-
-### Resource Management
-Beyond just visualizing tasks, this skill can be extended to manage resources. Users can assign resources (e.g., team members, equipment) to tasks and visualize the resource allocation across the project.
-
-**Features:**
--   **Resource Assignment:** Assign one or more resources to each task.
--   **Resource Load Visualization:** Generate a separate chart showing the workload of each resource over time, helping to identify overallocated or underutilized resources.
--   **Cost Calculation:** If hourly rates are provided for resources, the skill can estimate the cost of each task and the total project cost.
-
-**Example Input (JSON with resources):**
-```json
-{
-  "tasks": [
-    {
-      "id": "DEV1",
-      "name": "Backend Development",
-      "start": "2026-05-01",
-      "finish": "2026-05-15",
-      "assignee": "Alice"
-    },
-    {
-      "id": "DEV2",
-      "name": "Frontend Development",
-      "start": "2026-05-01",
-      "finish": "2026-05-15",
-      "assignee": "Bob"
-    }
-  ],
-  "resources": {
-      "Alice": {"rate": 80},
-      "Bob": {"rate": 75}
-  }
-}
-```
-
-### What-If Scenario Analysis
-Project managers often need to explore different scenarios. This skill allows users to create and compare different versions of the project plan.
-
-**Example Scenarios:**
--   What if a key team member is unavailable for a week?
--   What if we add more resources to a critical task?
--   What is the impact of a supplier delay on the project timeline?
-
-Manus can generate multiple Gantt charts representing these different scenarios, allowing for better decision-making.
-
-**User Command Example:**
-`"Manus, create a version of the Gantt chart where 'Backend Development' is delayed by 5 days and show me the impact on the final delivery date."`

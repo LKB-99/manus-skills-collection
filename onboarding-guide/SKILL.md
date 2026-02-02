@@ -1,6 +1,6 @@
 ---
 name: onboarding-guide
-description: A comprehensive skill to create, manage, and automate onboarding guides for new team members.
+description: "A comprehensive skill to create, manage, and automate onboarding guides. Use this skill when users want to create onboarding plans, guides for new employees, or integrate new members. Triggers: onboarding, new hire, new employee, integration, 30-60-90 plan, checklist, guia de integração, novo funcionário."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,18 @@ metadata:
 
 ## Overview
 The Onboarding Guide skill is designed to streamline the process of integrating new members into a team or organization. It helps create structured, comprehensive, and accessible onboarding documents that ensure a smooth and efficient ramp-up period. By leveraging this skill, you can automate the generation of personalized onboarding plans, track progress, and provide new hires with all the necessary information and resources in one centralized place. This skill is ideal for managers, HR professionals, and team leads who want to improve the onboarding experience and reduce the administrative overhead associated with it.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: onboarding, new hire, new employee, integration, 30-60-90 plan, checklist, guia de integração, novo funcionário, integração de equipe
+- Phrases: "create an onboarding plan", "guide for new employees", "onboard a new team member", "criar um guia de integração", "plano de 30-60-90 dias"
+- Context: Any discussion about integrating new members into a team or organization.
+
+**Example user queries that trigger this skill:**
+- "I need to create an onboarding guide for a new software engineer."
+- "How can I help a new hire feel welcome?"
+- "Preciso de um plano de integração para um novo membro da equipe."
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:
@@ -218,4 +230,3 @@ This template can be inserted into any onboarding guide.
 - [Google's Re-Work: A manager’s guide to onboarding](https://rework.withgoogle.com/guides/managers-guide-to-onboarding/)
 - [GitLab's Onboarding Guide](https://about.gitlab.com/handbook/general-onboarding/)
 - [A Guide to Successful Employee Onboarding - SHRM](https://www.shrm.org/resourcesandtools/hr-topics/talent-acquisition/pages/new-employee-onboarding-guide.aspx)
-

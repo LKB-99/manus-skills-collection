@@ -1,6 +1,6 @@
 ---
 name: financial-dashboard
-description: Personal and business financial dashboards with interactive visualizations.
+description: "Create personal and business financial dashboards with interactive visualizations. Use this skill when users want to create, manage, or analyze financial dashboards, track financial health, or visualize financial data. Triggers: financial dashboard, personal finance, business finance, KPI tracking, data visualization, dashboard financeiro, finanças pessoais, finanças empresariais, acompanhamento de KPIs, visualização de dados."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,22 @@ metadata:
 
 ## Overview
 This skill empowers Manus to create, manage, and analyze personal and business financial dashboards. It leverages data processing and visualization capabilities to provide interactive and insightful dashboards. By connecting to various data sources, this skill can generate a comprehensive overview of financial health, track key performance indicators (KPIs), and help in making data-driven decisions. Whether for personal budgeting or for complex corporate financial analysis, this skill provides the tools to build a customized and effective financial dashboard.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: financial dashboard, personal finance, business finance, KPI tracking, data visualization, dashboard financeiro, finanças pessoais, finanças empresariais, acompanhamento de KPIs, visualização de dados, financial health, saúde financeira, investment portfolio, portfólio de investimentos.
+- Phrases: "create a financial dashboard", "track my expenses", "visualize my revenue", "monitor my investments", "criar um dashboard financeiro", "acompanhar meus gastos", "visualizar minha receita", "monitorar meus investimentos".
+- Context: Any discussion about creating, managing, or analyzing financial data through a dashboard interface.
+
+**Example user queries that trigger this skill:**
+- "I want to create a dashboard to track my personal finances."
+- "Can you help me build a financial dashboard for my business?"
+- "I need to visualize my company's financial performance."
+- "Quero criar um painel para acompanhar minhas finanças pessoais."
+- "Você pode me ajudar a construir um dashboard financeiro para minha empresa?"
+- "Preciso visualizar o desempenho financeiro da minha empresa."
+
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:
@@ -167,4 +183,3 @@ plt.show()
 *   [12 Financial Dashboard Examples & Templates](https://www.qlik.com/us/dashboard-examples/financial-dashboards)
 *   [21 financial KPIs and metrics you should track](https://www.thoughtspot.com/data-trends/dashboard/financial-kpis-and-metrics-dashboard-examples)
 *   [30 Financial Metrics and KPIs to Measure Success](https://www.netsuite.com/portal/resource/articles/accounting/financial-kpis-metrics.shtml)
-

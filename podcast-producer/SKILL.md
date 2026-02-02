@@ -1,6 +1,6 @@
 ---
 name: podcast-producer
-description: Complete podcast production including scriptwriting, audio editing, and transcription.
+description: "Complete podcast production from script to final audio. Use this skill when users want to create, edit, transcribe, or produce a podcast. Triggers: podcast, podcasting, audio editing, transcription, show notes, create podcast, start podcast, produzir podcast, editar áudio, transcrição."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,14 +12,20 @@ metadata:
 ## Overview
 This skill provides a comprehensive workflow for producing a podcast from start to finish. It covers everything from initial concept and scriptwriting to audio recording, editing, and final transcription for show notes or content repurposing. This skill is designed for users who want to create high-quality podcasts efficiently, leveraging AI and automation to streamline the production process.
 
-## When to Use This Skill
-This skill is particularly useful in the following scenarios:
+## Automatic Triggers
 
-- **New Podcast Creation:** When you have an idea for a podcast but need a structured process to get started.
-- **Automating Existing Podcasts:** For podcasters looking to automate repetitive tasks like editing, transcription, and show note generation.
-- **Content Repurposing:** To transform existing content (blog posts, webinars, etc.) into a podcast format.
-- **Interview-Based Podcasts:** To streamline the process of recording, editing, and transcribing interviews with guests.
-- **Solo Podcasts:** For individuals who want to produce their own podcasts without a large team.
+**ALWAYS activate this skill when user mentions:**
+- Keywords: podcast, podcasting, audio editing, transcription, show notes, scriptwriting, audiogram, sound effects, produzir podcast, editar áudio, transcrição, roteiro de podcast
+- Phrases: "create a podcast", "start a podcast", "edit my audio", "transcribe this file", "how to make a podcast", "quero criar um podcast", "preciso editar um áudio", "gerar notas do programa"
+- Context: Any discussion about creating, editing, or distributing audio content in an episodic format.
+
+## When to Use This Skill
+**ALWAYS use this skill when the user wants to:**
+- Create a new podcast from an idea.
+- Automate tasks for an existing podcast, like editing or generating show notes.
+- Repurpose existing content (like blog posts) into a podcast.
+- Produce an interview-based or solo podcast.
+- Handle any part of the podcast production workflow, including scriptwriting, recording, editing, transcription, or creating promotional assets.
 
 ## Core Capabilities
 

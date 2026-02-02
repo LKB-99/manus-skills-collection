@@ -1,8 +1,6 @@
-
-
 ---
 name: architecture-decision-record
-description: A skill for creating and managing Architecture Decision Records (ADRs) to document significant architectural choices.
+description: "A skill for creating and managing Architecture Decision Records (ADRs). Use this skill when users want to document significant architectural choices, create, manage, or validate ADRs. Triggers: ADR, architecture decision record, architectural decision, design document, technical decision, architecture log, adr."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -19,7 +17,18 @@ ADRs are particularly valuable in agile and evolving projects where design decis
 
 By leveraging this skill, teams can cultivate a culture of thoughtful architectural practice. It encourages deliberate decision-making and provides a mechanism for knowledge sharing that scales with the team and the complexity of the system. The result is a more robust, maintainable, and understandable architecture that can evolve gracefully over time.
 
-_content_
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: ADR, architecture decision record, architectural decision, design document, technical decision, architecture log, adr, registro de decisão de arquitetura, decisão de arquitetura, documento de design, decisão técnica.
+- Phrases: "create a new ADR", "document an architectural decision", "criar um novo ADR", "documentar uma decisão de arquitetura", "gerenciar ADRs".
+- Context: Any discussion about documenting software architecture, technical choices, or design rationale.
+
+**Example user queries that trigger this skill:**
+- "I need to create an ADR for our new database choice."
+- "Can you help me document the decision to use microservices?"
+- "Quero criar um registro de decisão de arquitetura para o nosso novo serviço."
+
 ## When to Use This Skill
 
 This skill is most effective in the following scenarios:
@@ -187,114 +196,47 @@ We have a growing need for asynchronous communication between our services. For 
 We considered the following options:
 
 *   **RabbitMQ:** A mature, feature-rich message broker with broad community support and client libraries for all our languages.
-*   **Apache Kafka:** A high-throughput, distributed streaming platform. It is more complex to set up and manage than RabbitMQ, but it offers superior performance for high-volume streaming data.
-*   **AWS SQS:** A fully managed message queuing service. It is easy to use and integrates well with other AWS services, but it offers less flexibility than a self-hosted solution.
+*   **Apache Kafka:** A high-throughput, distributed streaming platform. While powerful, it is more complex to set up and manage than RabbitMQ, and its log-based architecture is more than we need for our current use cases.
+*   **AWS SQS:** A fully managed message queuing service. While easy to use, it would lock us into the AWS ecosystem, and we prefer to maintain a cloud-agnostic architecture at this stage.
 
 ## Decision
 
-We will use RabbitMQ as our primary message broker for asynchronous communication between services. We will start with a single, non-clustered instance for development and staging environments, and a three-node cluster for production.
+We will adopt RabbitMQ as our primary message broker for asynchronous inter-service communication. All new services that need to communicate asynchronously should use RabbitMQ.
 
 ## Consequences
 
 *   **Positive:**
-    *   Services will be more loosely coupled, improving resilience and maintainability.
+    *   Services will be more loosely coupled, improving resilience and scalability.
     *   User-facing response times will be reduced for operations that can be performed asynchronously.
-    *   We will have a flexible and scalable platform for future event-driven features.
+    *   We can leverage the extensive features of RabbitMQ, such as message routing, persistence, and dead-letter exchanges.
 *   **Negative:**
-    *   We will need to take on the operational overhead of managing a RabbitMQ cluster.
-    *   Developers will need to be trained on how to use RabbitMQ and the principles of message-based communication.
-*   **Risks:**
-    *   If not configured correctly, RabbitMQ can become a single point of failure.
-    *   Message loss is possible in certain failure scenarios if not properly handled.
+    *   We will need to host and manage a RabbitMQ cluster, which adds operational overhead.
+    *   Developers will need to be trained on how to use RabbitMQ effectively.
+    *   There is a risk of message loss if the broker is not configured correctly for high availability.
 *   **Follow-up:**
-    *   Create a set of best practice guidelines for using RabbitMQ.
-    *   Develop a standard library for our services to interact with RabbitMQ.
-    *   Set up monitoring and alerting for the RabbitMQ cluster.
-
+    *   A new set of libraries and standards for interacting with RabbitMQ will be developed.
+    *   The infrastructure team will be responsible for setting up and maintaining the RabbitMQ cluster.
+    *   A training session will be scheduled for all developers.
 ```
 
-### Example 2: Listing Existing ADRs
+### Example 2: Summarizing ADRs
 
 **User Request:**
 
-> "Manus, show me all the architectural decisions we have made."
+> "What architectural patterns have we adopted so far?"
 
 **Manus Action:**
 
-1.  Scans the `doc/adr` directory for Markdown files.
-2.  Parses the title and status from each file.
-3.  Presents a summary to the user.
+1.  Scans all ADRs with the status "Accepted".
+2.  Looks for keywords related to architectural patterns in the "Title" and "Decision" sections.
+3.  Synthesizes the findings into a summary.
 
 **Manus Response:**
 
-> Here are the current Architecture Decision Records:
+> Based on the accepted ADRs, we have adopted the following architectural patterns:
 >
-> *   **0001: Adopt PostgreSQL as the primary database** (Accepted)
-> *   **0002: Use gRPC for inter-service communication** (Accepted)
-> *   **0003: Use RabbitMQ for asynchronous messaging** (Proposed)
+> *   **Microservices:** We are moving towards a microservice architecture to improve modularity and scalability (ADR-0002).
+> *   **Asynchronous Messaging:** We use RabbitMQ for asynchronous communication between services (ADR-0003).
+> *   **API Gateway:** All external traffic is routed through an API Gateway to provide a single entry point to our system (ADR-0005).
 
-### Example 3: Superseding an ADR
-
-**User Request:**
-
-> "Manus, our needs have changed, and gRPC is no longer the best fit for inter-service communication. Create a new ADR to supersede ADR-0002 and adopt REST APIs with OpenAPI."
-
-**Manus Action:**
-
-1.  Creates a new file: `doc/adr/0005-use-rest-apis-with-openapi.md`
-2.  Populates the file with the standard ADR template, noting that it supersedes a previous ADR.
-3.  Updates the status of the old ADR.
-
-**Generated ADR:**
-
-```markdown
-# 5. Use REST APIs with OpenAPI for Inter-Service Communication
-
-*   **Status:** Proposed
-*   **Date:** 2026-08-15
-*   **Supersedes:** [ADR-0002: Use gRPC for inter-service communication](0002-use-grpc-for-inter-service-communication.md)
-
-## Context
-
-Our initial decision to use gRPC (documented in ADR-0002) was based on the need for high performance and a strongly-typed contract between services. However, our team has grown, and we now have a more diverse set of client applications, including a web-based administrative UI and several third-party integrations. gRPC's reliance on HTTP/2 and Protobuf makes it challenging to use directly from a browser and requires more specialized tooling for external partners.
-
-We need a communication protocol that is more universally accessible and easier to debug with standard tools. The performance benefits of gRPC are no longer as critical as the need for broad compatibility and ease of use.
-
-## Decision
-
-We will adopt RESTful APIs with OpenAPI v3 for all inter-service communication. All new services will expose a REST API, and existing gRPC-based services will be migrated over time. We will use the OpenAPI specification to define our API contracts, and we will use tools like Swagger UI to provide interactive documentation.
-
-## Consequences
-
-*   **Positive:**
-    *   Our APIs will be easily consumable by a wide range of clients, including web browsers and third-party applications.
-    *   The learning curve for new developers will be lower, as REST and JSON are more familiar than gRPC and Protobuf.
-    *   We can leverage a mature ecosystem of tools for API design, documentation, and testing.
-*   **Negative:**
-    *   We will likely see a decrease in performance compared to gRPC.
-    *   We will lose the benefits of a strongly-typed, contract-first workflow that gRPC enforces.
-*   **Follow-up:**
-    *   Update ADR-0002 to a status of "Superseded".
-    *   Develop a migration plan for existing gRPC services.
-    *   Establish a new set of standards and best practices for designing REST APIs.
-
-```
-
-## References
-
-*   [Documenting Architecture Decisions - Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions)
-*   [Architecture Decision Record (ADR) - GitHub Repository by Joel Parker Henderson](https://github.com/joelparkerhenderson/architecture-decision-record)
-*   [ADR GitHub Organization](https://adr.github.io/)
-*   [Markdown Architectural Decision Records (MADR)](https://adr.github.io/madr/)
-*   [Cognitect's ADRs](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
-*   [ADR Tools - A CLI tool for working with ADRs](https://github.com/npryce/adr-tools)
-*   [Sustainable Architectural Design Decisions](https://www.infoq.com/articles/sustainable-architectural-design-decisions/)
-*   [When and How to Write an Architecture Decision Record](https://engineering.atspotify.com/2020/04/14/when-and-how-to-write-an-architecture-decision-record/)
-*   [Architecture Decision Records in Action](https://www.youtube.com/watch?v=Wjja_n_0_iE)
-*   [Lightweight Architecture Decision Records](https://www.thoughtworks.com/radar/techniques/lightweight-architecture-decision-records)
-*   [A Practical Guide to Writing ADRs](https://www.freecodecamp.org/news/a-practical-guide-to-writing-adrs/)
-*   [ADRs: A Lightweight and Effective Way to Document Architectural Decisions](https://www.youtube.com/watch?v=7Gqn2dbt_JY)
-*   [How to Use ADRs to Make Your Architecture More Understandable](https://itnext.io/how-to-use-adrs-to-make-your-architecture-more-understandable-e0e6b54499f3)
-*   [The Power of Architecture Decision Records (ADRs)](https://www.youtube.com/watch?v=h93f2fna2tM)
-*   [ADR: The Best Way to Document Your Architecture Decisions](https://www.youtube.com/watch?v=Y-d2z_j3i5A)
-_content_
+This skill is designed to be a living part of your development process, helping you build better software through clear, well-documented architectural decisions.

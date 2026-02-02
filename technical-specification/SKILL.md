@@ -1,6 +1,6 @@
 ---
 name: technical-specification
-description: A skill for creating detailed technical specification documents for systems, software, and features.
+description: "Creates detailed technical specification documents. Use this skill when users need to write technical specs, design documents, or outline system architecture. Triggers: technical specification, spec, tech spec, software design, system architecture, API design, feature documentation, documentação técnica, especificação técnica."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -9,19 +9,31 @@ metadata:
 
 # Technical Specification Documentation
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: technical specification, spec, tech spec, software design document, system architecture, API design, feature documentation, documentação técnica, especificação técnica, desenho de software, desenho de sistema, documento de arquitetura
+- Phrases: "create a technical spec", "write a design document", "document the system architecture", "how to write a technical specification", "criar uma especificação técnica", "escrever um documento de desenho", "documentar a arquitetura do sistema"
+- Context: Any discussion about creating formal documentation for software, systems, features, or APIs before or during development.
+
+**Example user queries that trigger this skill:**
+- "I need to write a technical specification for a new mobile app."
+- "Como eu crio um documento de arquitetura para o meu novo serviço?"
+- "Can you help me outline the API design for our new feature?"
+
 ## Overview
 This skill is designed to assist developers, project managers, and system architects in creating comprehensive and structured technical specification documents. A technical specification is a critical document that describes the technical requirements, design, and implementation details of a software system, feature, or component. It serves as a blueprint for the development team and a reference for all stakeholders. This skill provides a standardized template and a step-by-step workflow to ensure that all essential aspects of a technical design are covered, leading to better-aligned teams, fewer ambiguities, and a more efficient development process.
 
 ## When to Use This Skill
-This skill is particularly useful in the following scenarios:
 
--   **New Project Kick-off:** When starting a new software project, a detailed technical specification is essential to define the scope, architecture, and technology stack.
--   **New Feature Development:** Before implementing a significant new feature, this skill helps to outline its functionality, its impact on the existing system, and the implementation plan.
--   **System Architecture Design:** When designing or refactoring the architecture of a system, this skill can be used to document the architectural patterns, components, and their interactions.
--   **API Design and Integration:** For creating or integrating with APIs, it helps to specify endpoints, data formats, authentication mechanisms, and error handling.
--   **Cross-Team Collaboration:** When multiple teams are collaborating on a project, a shared technical specification ensures everyone is on the same page.
--   **Onboarding New Team Members:** A well-documented specification can significantly speed up the onboarding process for new developers.
--   **Request for Proposal (RFP) Responses:** When responding to an RFP, a technical specification can be used to detail the proposed solution.
+**ALWAYS use this skill when user mentions:**
+- Creating or writing technical specifications
+- Writing design documents
+- Documenting system architecture plans
+- Outlining new feature documentation
+- Defining API design specifications
+- Preparing technical proposals (RFP)
+- Onboarding developers with technical documentation
 
 ## Core Capabilities
 

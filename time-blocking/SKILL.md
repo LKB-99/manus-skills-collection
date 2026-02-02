@@ -1,6 +1,6 @@
 ---
 name: time-blocking
-description: A comprehensive guide to mastering time management using the Time Blocking and Pomodoro techniques for enhanced productivity and focus.
+description: "Master time management with Time Blocking and Pomodoro techniques. Use this skill when users want to improve productivity, manage their schedule, or focus on tasks. Triggers: time blocking, pomodoro, manage schedule, productivity, focus, to-do list, get things done, GTD, agenda, calendário, produtividade, foco, gerenciar tempo."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,8 +12,22 @@ metadata:
 ## Overview
 This skill provides a detailed framework for implementing two powerful time management techniques: **Time Blocking** and the **Pomodoro Technique**. Time blocking helps you regain control of your schedule by dedicating specific blocks of time to tasks, while the Pomodoro Technique enhances focus and prevents burnout by breaking down work into short, timed intervals. By combining these methods, you can create a highly effective system for managing your time, reducing distractions, and achieving your goals with greater efficiency. This skill is designed for anyone looking to improve their productivity, from students and freelancers to professionals and teams.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: time blocking, pomodoro, manage schedule, productivity, focus, to-do list, get things done, GTD, agenda, calendário, produtividade, foco, gerenciar tempo, organizar meu dia, montar uma agenda, criar um cronograma
+- Phrases: "how to be more productive", "help me focus", "manage my time", "create a schedule", "organizar meu tempo", "melhorar minha produtividade", "técnica pomodoro", "como me concentrar"
+- Context: Any discussion about improving productivity, managing daily schedules, or focusing on tasks.
+
+**Example user queries that trigger this skill:**
+- "I feel overwhelmed with my to-do list"
+- "How can I stop procrastinating?"
+- "I need a better way to organize my day"
+- "Como posso ser mais produtivo?"
+- "Me ajude a gerenciar meu tempo"
+
 ## When to Use This Skill
-This skill is particularly useful in the following situations:
+ALWAYS use this skill when user mentions the following situations:
 
 *   When you feel overwhelmed by a long to-do list and don't know where to start.
 *   When you find yourself easily distracted and struggle to focus on important tasks.
@@ -135,20 +149,20 @@ BREAK_DURATION=5
 # Function to display a notification
 notify() {
     if command -v notify-send &> /dev/null; then
-        notify-send "Pomodoro Timer" "$1"
+        notify-send \"Pomodoro Timer\" \"$1\"
     else
-        echo "$1"
+        echo \"$1\"
     fi
 }
 
 # Main loop
 while true; do
     # Work interval
-    notify "Time to work!"
+    notify \"Time to work!\"
     sleep $((WORK_DURATION * 60))
 
     # Break interval
-    notify "Time for a break!"
+    notify \"Time for a break!\"
     sleep $((BREAK_DURATION * 60))
 done
 ```
@@ -176,15 +190,15 @@ While a simple pen and paper or a basic timer can be effective, several digital 
 
 **Q: What if a task takes longer than the time I blocked for it?**
 
-A: This is a common issue. You have a few options: 1) Make a note of the progress and schedule another time block to finish it. 2) If it's critical, you can "borrow" time from a less important block later in the day. 3) Use this as a learning opportunity to estimate your time more accurately in the future. The key is not to let it derail your entire day.
+A: This is a common issue. You have a few options: 1) Make a note of the progress and schedule another time block to finish it. 2) If it's critical, you can \"borrow\" time from a less important block later in the day. 3) Use this as a learning opportunity to estimate your time more accurately in the future. The key is not to let it derail your entire day.
 
 **Q: How do I handle unexpected interruptions?**
 
-A: For external interruptions, use the "inform, negotiate, schedule, call back" strategy. Inform the person you are in a focused work session. Negotiate a time to talk later. Schedule that new commitment. Call them back at the agreed-upon time. For internal interruptions (your own thoughts), use a "distraction sheet." Quickly jot down the distracting thought and immediately return to your task.
+A: For external interruptions, use the \"inform, negotiate, schedule, call back\" strategy. Inform the person you are in a focused work session. Negotiate a time to talk later. Schedule that new commitment. Call them back at the agreed-upon time. For internal interruptions (your own thoughts), use a \"distraction sheet.\" Quickly jot down the distracting thought and immediately return to your task.
 
 **Q: I feel restricted by the schedule. How can I be more flexible?**
 
-A: Time blocking is a guide, not a prison. The goal is intentionality. Try building "buffer blocks" or "flex time" into your day. These are unscheduled blocks you can use to catch up, handle unexpected tasks, or simply take a longer break. You can also try "day theming" where you assign a general focus for each day (e.g., Monday for meetings, Tuesday for writing) instead of scheduling every hour.
+A: Time blocking is a guide, not a prison. The goal is intentionality. Try building \"buffer blocks\" or \"flex time\" into your day. These are unscheduled blocks you can use to catch up, handle unexpected tasks, or simply take a longer break. You can also try \"day theming\" where you assign a general focus for each day (e.g., Monday for meetings, Tuesday for writing) instead of scheduling every hour.
 
 **Q: The 25/5 minute cycle doesn't work for me. Can I change it?**
 
@@ -205,29 +219,9 @@ This example shows a more complex schedule with recurring meetings, deep work bl
 | 8:30 - 9:00   | Daily Stand-up Meeting                           | Meeting      | Team synchronization                                  |
 | 9:00 - 11:00  | Deep Work: Project Alpha - Feature Prioritization | Deep Work    | 4x Pomodoros. No interruptions.                       |
 | 11:00 - 11:30 | Process Team Communications (Slack/Email)        | Shallow Work | Respond to urgent messages only.                      |
-| 11:30 - 12:30 | Lunch & Walk                                     | Break        | Completely disconnect from work.                      |
-| 12:30 - 2:00  | Client Call - Project Beta                       | Meeting      | Prepare agenda beforehand.                            |
-| 2:00 - 3:30   | Deep Work: Project Gamma - Budget Planning       | Deep Work    | 3x Pomodoros.                                         |
-| 3:30 - 4:00   | Buffer / Flex Time                               | Flex         | Use for overflow tasks or a short break.              |
-| 4:00 - 5:00   | End of Day Wrap-up & Planning for Tomorrow       | Admin        | Review progress, clear inbox, plan next day's blocks. |
-
-## The Psychology Behind Why This Works
-
-Understanding the psychological principles behind these techniques can make them even more effective.
-
-*   **Parkinson's Law:** This law states that "work expands so as to fill the time available for its completion." By setting a fixed time for a task (a time block and a Pomodoro), you create a sense of urgency that forces you to focus and be more efficient.
-
-*   **The Zeigarnik Effect:** This psychological phenomenon suggests that people remember uncompleted or interrupted tasks better than completed tasks. The short breaks in the Pomodoro Technique leverage this. The break provides a small interruption, keeping the task top-of-mind and making it easier to re-engage after the break.
-
-*   **Decision Fatigue:** We have a finite amount of mental energy for making decisions each day. An open-ended to-do list requires you to constantly decide what to work on next. Time blocking eliminates this in-the-moment decision-making. Your plan is already set, conserving your mental energy for the actual work.
-
-*   **Goal-Setting Theory:** This theory posits that specific and challenging goals lead to higher performance. Each time block and each Pomodoro session acts as a small, specific, and achievable goal. The satisfaction of completing each one provides a dopamine hit that boosts motivation and momentum.
-
-*   **Cognitive Load:** Trying to juggle multiple tasks or a long, unstructured to-do list increases your cognitive load, making it harder to think clearly. Time blocking and single-tasking within a Pomodoro reduce this load, freeing up mental resources to focus deeply on the task at hand.
-
-## References
-
-*   [The Pomodoro Technique by Francesco Cirillo](https://francescocirillo.com/products/the-pomodoro-technique)
-*   [Time-Blocking: A Productivity Strategy for the Easily Distracted](https://hbr.org/2021/05/time-blocking-a-productivity-strategy-for-the-easily-distracted)
-*   [Todoist: What Is Time Blocking?](https://todoist.com/productivity-methods/time-blocking)
-*   [Wikipedia: Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique)
+| 11:30 - 12:30 | Lunch & Walk                                     | Break        | Disconnect completely.                                |
+| 12:30 - 2:30  | Deep Work: Q3 Budget Planning                    | Deep Work    | 4x Pomodoros.                                         |
+| 2:30 - 3:00   | Review Project Beta KPIs                         | Admin        | Update dashboard and prepare for weekly review.       |
+| 3:00 - 4:00   | Weekly Review Meeting with Stakeholders          | Meeting      | Present KPIs and discuss next steps.                  |
+| 4:00 - 4:30   | Flex Time / Buffer                               | Flex         | Catch up on pending tasks or handle urgencies.        |
+| 4:30 - 5:00   | Daily Wrap-up & Plan for Tomorrow                | Planning     | Review accomplishments, clear inbox, plan next day.   |

@@ -1,6 +1,6 @@
 ---
 name: competitor-analysis
-description: A skill for conducting comprehensive market competitor analysis, including pricing, features, and positioning.
+description: "Conducts comprehensive market competitor analysis, including pricing, features, and positioning. Use this skill when users want to analyze competitors, understand the competitive landscape, or compare products. Triggers: competitor analysis, competitive landscape, market analysis, competitor research, product comparison, feature analysis, pricing strategy, SWOT analysis, análise de concorrentes, pesquisa de mercado."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 
 ## Overview
 This skill enables Manus to perform a thorough competitive analysis of a given market or industry. It systematically gathers, analyzes, and presents data on competitors, focusing on their product features, pricing strategies, market positioning, and customer sentiment. By leveraging this skill, users can gain actionable insights to inform their own business strategy, product development, and marketing efforts. The goal is to provide a clear, data-driven picture of the competitive landscape, highlighting opportunities and threats.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: competitor analysis, competitive landscape, market analysis, competitor research, product comparison, feature analysis, pricing strategy, SWOT analysis, análise de concorrentes, pesquisa de mercado, comparação de produtos, estratégia de preços.
+- Phrases: "analyze my competitors", "who are my main competitors?", "compare my product with others", "what is the pricing of competitor X?", "do a SWOT analysis of my competition", "analise meus concorrentes", "pesquisa de mercado para meu produto".
+- Context: Any discussion involving the need to research, understand, or compare with competing businesses, products, or services.
+
+**Example user queries that trigger this skill:**
+- "I need a complete analysis of my top 3 competitors."
+- "Can you compare the features of my app against Slack and Microsoft Teams?"
+- "Quero entender o cenário competitivo para meu novo software."
+- "Faça uma análise de preços dos meus concorrentes diretos."
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:
@@ -124,7 +137,7 @@ section.
 **User Prompt:** "I'm building a new project management tool. Can you identify the top 3 competitors for Asana?"
 
 **Manus Workflow:**
-1.  `search(queries=["alternatives to Asana", "project management software competitors"]`
+1.  `search(queries=['alternatives to Asana', 'project management software competitors'])`
 2.  Analyze search results to identify Trello, Monday.com, and ClickUp as top competitors.
 3.  `file(action=\'write\', path=\'competitors.txt\', text=\'Trello
 Monday.com

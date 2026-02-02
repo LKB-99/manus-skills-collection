@@ -1,6 +1,6 @@
 ---
 name: localization-manager
-description: A skill for managing application localization and translation workflows, from extracting strings to integrating with translation services.
+description: "Manages application localization and translation workflows. Use this skill for tasks related to internationalization (i18n), localization (l10n), translation management, and adapting software for global audiences. Triggers: localization, internationalization, i18n, l10n, translation, translate, language, locale, XLIFF, PO, JSON, resource files, tradução, localizar, internacionalização."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,15 +12,28 @@ metadata:
 ## Overview
 The Localization Manager skill provides a comprehensive toolkit for managing the localization (l10n) and internationalization (i18n) of software applications. It helps developers and localization managers automate the process of extracting translatable strings, managing translation files, integrating with translation services, and ensuring that the application is ready for a global audience. This skill is designed to be used in projects of any size, from small web apps to large-scale enterprise software.
 
-## When to Use This Skill
-This skill is particularly useful in the following scenarios:
+## Automatic Triggers
 
-*   **Preparing an application for international markets:** When you need to adapt your software to support multiple languages and regions.
-*   **Automating translation workflows:** To streamline the process of sending strings to translators and integrating the translations back into the application.
-*   **Managing translation files:** For projects with a large number of translation keys and multiple languages, this skill helps keep files organized and synchronized.
-*   **Extracting hardcoded strings:** To identify and extract text that is hardcoded in the source code into resource files for translation.
-*   **Integrating with translation APIs:** To programmatically interact with services like Google Translate, DeepL, or other translation management systems (TMS).
-*   **Validating translation quality:** To perform basic checks on translation files, such as looking for missing keys or placeholder mismatches.
+**ALWAYS activate this skill when user mentions:**
+- Keywords: localization, internationalization, i18n, l10n, translation, translate, language, locale, XLIFF, PO, JSON, resource files, tradução, localizar, internacionalização, TMS, translation management system.
+- Phrases: "translate my app", "manage translations", "extract strings for translation", "prepare for international markets", "adapt software for multiple languages", "automatizar tradução", "gerenciar arquivos de tradução".
+- Context: Any discussion about making software available in multiple languages, managing text for translators, or integrating with translation services.
+
+**Example user queries that trigger this skill:**
+- "I need to prepare my React application for German and French."
+- "How can I extract all user-facing strings from my Python code?"
+- "Preciso de ajuda para gerenciar os arquivos de tradução do meu projeto."
+- "Show me how to integrate with the DeepL API for automatic translations."
+
+## When to Use This Skill
+
+**ALWAYS use this skill when the user mentions:**
+- Preparing an application for international markets or adapting software for multiple languages and regions.
+- Automating translation workflows, including sending strings to translators and integrating translations back.
+- Managing translation files (e.g., JSON, XLIFF, PO), especially for projects with many keys and languages.
+- Extracting hardcoded strings from source code into resource files for translation.
+- Integrating with translation APIs or Translation Management Systems (TMS) like Google Translate or DeepL.
+- Validating translation quality, such as checking for missing keys or placeholder mismatches.
 
 ## Core Capabilities
 

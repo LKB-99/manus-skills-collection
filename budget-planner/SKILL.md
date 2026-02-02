@@ -1,6 +1,6 @@
 ---
 name: budget-planner
-description: Personal and family budget planning with automatic categorization.
+description: "Create, manage, and analyze personal and family budgets. Use this skill when users want to track income and expenses, categorize spending, or set financial goals. Triggers: budget, budget planner, financial planning, expense tracker, savings plan, personal finance, orçamento, planejamento financeiro, controle de gastos, finanças pessoais."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 
 ## Overview
 This skill provides a comprehensive framework for creating, managing, and analyzing personal and family budgets. It helps users track their income and expenses, categorize their spending, and gain insights into their financial habits. By leveraging automated categorization and providing pre-built templates, the skill simplifies the budgeting process, making it accessible even for those with no prior experience. It is designed to empower users to take control of their finances, save money, and achieve their financial goals.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: budget, budget planner, financial planning, expense tracker, savings plan, personal finance, family budget, money management, orçamento, planejamento financeiro, controle de gastos, finanças pessoais, orçamento familiar, gerenciador financeiro.
+- Phrases: "create a budget", "track my expenses", "plan my finances", "how to save money", "criar um orçamento", "controlar meus gastos", "planejar minhas finanças", "como economizar dinheiro".
+- Context: Any discussion about creating a budget, tracking spending, managing personal or family finances, and setting savings goals.
+
+**Example user queries that trigger this skill:**
+- "I need help creating a monthly budget."
+- "Can you help me track my family's expenses?"
+- "Quero fazer um planejamento financeiro para o próximo ano."
+- "Como posso controlar melhor meus gastos e economizar?"
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:

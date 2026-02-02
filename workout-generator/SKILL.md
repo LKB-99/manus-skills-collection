@@ -1,6 +1,6 @@
 ---
 name: workout-generator
-description: A skill to generate personalized workout plans with progression and tracking.
+description: "Generate personalized workout plans with progression and tracking. Use this skill when users want to create a workout routine, training program, or exercise plan. Triggers: workout, training, exercise, fitness plan, gym routine, treino, academia, plano de treino, rotina de exercícios."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,14 +12,27 @@ metadata:
 ## Overview
 This skill is designed to assist users in creating personalized workout routines. It takes into account the user's fitness level, goals, available equipment, and preferences to generate a comprehensive and effective training program. The skill also incorporates principles of progressive overload and provides a framework for tracking progress over time, ensuring continuous improvement and adaptation.
 
-## When to Use This Skill
-This skill is particularly useful in the following scenarios:
+## Automatic Triggers
 
-*   **Beginners:** For individuals who are new to fitness and need guidance on where to start.
-*   **Intermediates:** For those who have some experience but want to create a more structured and progressive workout plan.
-*   **Advanced Users:** For experienced lifters who want to optimize their training, break through plateaus, or try a new training split.
-*   **Personal Trainers:** To quickly generate baseline workout plans for clients that can be further customized.
-*   **Users with Limited Equipment:** To create effective workouts using only the equipment available to the user.
+**ALWAYS activate this skill when user mentions:**
+- Keywords: workout, training, exercise, fitness, gym, routine, plan, program, treino, academia, exercício, rotina, plano, programa
+- Phrases: "create a workout plan", "make a gym routine", "generate a training program", "montar um treino", "criar uma rotina de exercícios", "plano de academia"
+- Context: Any discussion about creating or structuring an exercise or fitness schedule.
+
+**Example user queries that trigger this skill:**
+- "I want to start working out, can you create a plan for me?"
+- "Preciso de um treino para a academia, 3 vezes por semana."
+- "How can I generate a push/pull/legs routine?"
+- "Monte uma rotina de exercícios para fazer em casa."
+
+## When to Use This Skill
+
+**ALWAYS use this skill when the user wants to:**
+- Create a new workout plan from scratch.
+- Generate a structured training program based on their goals (e.g., muscle gain, fat loss).
+- Get a personalized exercise routine for home or the gym.
+- Find a workout split (e.g., Full Body, Upper/Lower, PPL).
+- Receive a plan that includes progression and tracking.
 
 ## Core Capabilities
 

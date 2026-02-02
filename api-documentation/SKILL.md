@@ -1,6 +1,6 @@
 ---
 name: api-documentation
-description: A skill for creating comprehensive API documentation using OpenAPI/Swagger, including interactive examples.
+description: "A skill for creating comprehensive API documentation using OpenAPI/Swagger, including interactive examples. Use this skill when users want to generate, create, or update API documentation, OpenAPI specs, or Swagger files. Triggers: api documentation, openapi, swagger, api spec, swagger.json, openapi.yaml, documentar api, documentação de api."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,13 @@ metadata:
 
 ## Overview
 This skill empowers Manus to generate detailed, structured, and interactive API documentation using the OpenAPI Specification (formerly Swagger). It can analyze source code, existing documentation, or user requirements to produce a `swagger.json` or `openapi.yaml` file. This file can then be used to render interactive API documentation, generate client SDKs, and perform automated testing. The primary goal is to create clear, consistent, and easy-to-use documentation that helps developers understand and integrate with an API effectively.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: api documentation, openapi, swagger, api spec, swagger.json, openapi.yaml, documentar api, documentação de api, interactive documentation, api console
+- Phrases: "create api documentation", "generate swagger file", "document my api", "criar documentação de api", "gerar um swagger"
+- Context: Any discussion about creating, generating, or updating documentation for an API.
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:
@@ -218,144 +225,3 @@ To ensure the quality and correctness of the OpenAPI specification, the skill ca
 ## Advanced Workflow: Documenting a Live API
 
 1.  **Initial Scan:** The user provides a base URL for an existing, running API.
-2.  **Endpoint Probing (with caution):** The skill can attempt to access common endpoints (e.g., `/api`, `/v1`, `/health`) to see if the API is responsive. It will **always** ask for user permission before sending any requests to the API.
-3.  **Interactive Endpoint Definition:** The skill will then guide the user through defining each endpoint it should document:
-    *   "What is the next endpoint path? (e.g., `/products/{id}`)"
-    *   "Which HTTP method does it use? (GET, POST, PUT, DELETE, etc.)"
-    *   "Does this endpoint require authentication?"
-    *   "Please provide a sample JSON response for a successful GET request to this endpoint."
-4.  **Schema Inference:** From the example JSON responses, the skill will infer the data schemas and add them to the `components/schemas` section.
-5.  **Generation and Review:** After defining a few endpoints, the skill generates the initial `openapi.yaml` and the HTML viewer, allowing the user to review the progress and make corrections.
-
-## Extended Best Practices
-
-*   **Use Tags to Group Endpoints:** Organize your operations into logical groups using the `tags` keyword. This makes the documentation much easier to navigate (e.g., "Users", "Products", "Authentication").
-*   **Provide Clear Error Responses:** Don't just document the `200 OK` response. Document other possible responses like `400 Bad Request`, `401 Unauthorized`, `404 Not Found`, and `500 Internal Server Error`. Provide example error response bodies.
-*   **Document Pagination:** If an endpoint returns a list of items, document how pagination works. Use parameters like `limit` and `offset` or `page` and `pageSize` and explain them in the description.
-*   **Be Specific with Data Types and Formats:** Use the `format` keyword to be more specific about data types (e.g., `int64`, `float`, `date-time`, `uuid`). This is very helpful for code generation tools.
-*   **Keep Descriptions Concise but Complete:** Avoid jargon where possible. The goal is clarity. A developer new to your API should be able to understand the endpoint's purpose from its description.
-*   **External Documentation:** For complex business logic, link to external documentation using the `externalDocs` keyword. This keeps the OpenAPI file focused on the technical contract of the API.
-
-## More Examples
-
-### Example 4: A More Complex `openapi.yaml` with Authentication
-
-This example includes API Key authentication, a POST endpoint with a request body, and more detailed error responses.
-
-```yaml
-# SKILL.md:openapi-complex-template.yaml
-openapi: 3.0.3
-info:
-  title: Advanced Product API
-  description: An API for managing a product catalog, with authentication.
-  version: 2.1.0
-servers:
-  - url: https://api.yourcompany.com/v2
-    description: Production Environment
-paths:
-  /products:
-    post:
-      summary: Create a new product
-      tags:
-        - Products
-      security:
-        - ApiKeyAuth: []
-      requestBody:
-        description: The product object to be created.
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/NewProduct'
-      responses:
-        '201':
-          description: Product created successfully.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Product'
-        '400':
-          description: Invalid input.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-        '401':
-          description: Unauthorized. API key is missing or invalid.
-
-  /products/{productId}:
-    get:
-      summary: Get a product by its ID
-      tags:
-        - Products
-      parameters:
-        - name: productId
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
-      responses:
-        '200':
-          description: A single product.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Product'
-        '404':
-          description: Product not found.
-
-components:
-  schemas:
-    NewProduct:
-      type: object
-      required:
-        - name
-        - price
-      properties:
-        name:
-          type: string
-          example: "Wireless Mouse"
-        price:
-          type: number
-          format: float
-          example: 25.99
-        description:
-          type: string
-          example: "A comfortable and reliable wireless mouse."
-
-    Product:
-      allOf:
-        - $ref: '#/components/schemas/NewProduct'
-        - type: object
-          required:
-            - id
-            - createdAt
-          properties:
-            id:
-              type: string
-              format: uuid
-              example: "a1b2c3d4-e5f6-7890-1234-567890abcdef"
-            createdAt:
-              type: string
-              format: date-time
-              example: "2024-08-01T15:30:00Z"
-
-    Error:
-      type: object
-      properties:
-        code:
-          type: string
-          example: "INVALID_INPUT"
-        message:
-          type: string
-          example: "The 'name' field is required."
-
-  securitySchemes:
-    ApiKeyAuth:
-      type: apiKey
-      in: header
-      name: X-API-KEY
-```
-
-This more detailed example provides a better foundation for developers and showcases how to document more realistic API scenarios.

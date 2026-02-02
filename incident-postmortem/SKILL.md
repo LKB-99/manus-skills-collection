@@ -1,6 +1,6 @@
 ---
 name: incident-postmortem
-description: A skill for conducting detailed post-mortem analysis of incidents, including root cause analysis (RCA).
+description: "Conduct detailed post-mortem analysis of incidents, including root cause analysis (RCA). Use this skill when users need to analyze a service outage, data breach, or any system failure. Triggers: post-mortem, postmortem, incident analysis, root cause analysis, RCA, outage, service down, system failure, after-action report, AAR, análise de incidente, causa raiz."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -12,8 +12,23 @@ metadata:
 ## Overview
 This skill provides a structured framework for conducting a comprehensive post-mortem analysis of any incident. It guides the user through the process of gathering data, identifying the root cause, documenting the timeline, defining action items, and creating a shareable report. The primary goal is to learn from incidents, prevent recurrence, and improve system reliability and operational processes. This skill is essential for teams practicing Site Reliability Engineering (SRE), DevOps, and anyone responsible for maintaining production systems.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: post-mortem, postmortem, incident analysis, root cause analysis, RCA, outage, service down, system failure, after-action report, AAR, blameless, 5 whys
+- Portuguese Keywords: post-mortem, postmortem, análise de incidente, causa raiz, falha no sistema, serviço fora do ar, relatório de ação, AAR
+- Phrases: "conduct a post-mortem", "analyze the outage", "find the root cause", "what went wrong", "create an incident report"
+- Portuguese Phrases: "fazer um post-mortem", "analisar a falha", "encontrar a causa raiz", "o que deu errado", "criar um relatório de incidente"
+- Context: Any discussion immediately following the resolution of a technical incident, service disruption, or system failure where the goal is to understand the cause and prevent recurrence.
+
+**Example user queries that trigger this skill:**
+- "We just had a major outage. I need to start the post-mortem process."
+- "Can you help me figure out the root cause of last night's deployment failure?"
+- "Tivemos uma queda no serviço. Preciso fazer a análise da causa raiz."
+- "Vamos começar o post-mortem do incidente de segurança."
+
 ## When to Use This Skill
-This skill should be used after any significant incident, including but not limited to:
+ALWAYS use this skill when user mentions:
 
 *   **Service Outages:** When a user-facing service becomes unavailable or severely degraded.
 *   **Data Corruption or Loss:** Incidents that result in the loss or corruption of user or system data.

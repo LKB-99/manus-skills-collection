@@ -1,6 +1,6 @@
 ---
 name: habit-tracker
-description: A comprehensive skill for tracking habits, maintaining streaks, and using gamification to stay motivated.
+description: "A comprehensive skill for tracking habits, maintaining streaks, and using gamification to stay motivated. Use this skill when users want to track daily, weekly, or monthly habits, build routines, or monitor personal growth. Triggers: habit tracker, track habits, new habit, daily routine, weekly goal, build habit, streak, gamification, monitor progress, rastreador de hábitos, novo hábito, rotina diária, meta semanal, criar hábito."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 
 ## Overview
 This skill provides a robust system for tracking daily, weekly, or monthly habits. It is designed to help users build and maintain positive routines by incorporating streaks and gamification elements. Users can define habits, log their progress, visualize their consistency, and receive motivational feedback. The skill leverages simple file-based storage, making it transparent and easily manageable. It is ideal for anyone looking to instill discipline, track personal growth, or simply organize their daily routines in a more engaging way.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: habit tracker, track habits, new habit, daily routine, weekly goal, build habit, streak, gamification, monitor progress, rastreador de hábitos, novo hábito, rotina diária, meta semanal, criar hábito, acompanhar hábito
+- Phrases: "create a new habit", "track my reading habit", "start a daily routine", "how's my habit streak?", "criar um novo hábito", "acompanhar meu hábito de leitura", "iniciar uma rotina diária"
+- Context: Any discussion about creating, tracking, or maintaining personal habits, routines, or goals.
+
+**Example user queries that trigger this skill:**
+- "I want to start tracking my water intake."
+- "Can you help me build a new habit for studying?"
+- "Quero criar o hábito de meditar todos os dias."
+- "Como está minha sequência no hábito de exercícios?"
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:

@@ -1,6 +1,6 @@
 ---
 name: investment-portfolio-analyzer
-description: An advanced skill for in-depth analysis and management of investment portfolios using key risk and performance metrics.
+description: "Use this skill for in-depth analysis and management of investment portfolios using key risk and performance metrics. Triggers: investment portfolio, portfolio analysis, risk management, asset allocation, stock analysis, investment returns, portfolio optimization, analyze my investments, carteira de investimentos, análise de portfólio."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 
 ## Overview
 This skill provides a comprehensive and robust toolkit for analyzing, managing, and optimizing investment portfolios. It leverages a wide range of key financial metrics and models to assess performance, evaluate risk, and empower users to make data-driven, informed investment decisions. The skill is meticulously designed for a broad audience, from individual investors seeking to better understand their holdings to seasoned financial professionals requiring sophisticated analytical tools for client reporting and strategy development. By providing a structured workflow and clear explanations, this skill demystifies complex financial analysis, making it accessible and actionable.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: investment portfolio, portfolio analysis, risk management, asset allocation, stock analysis, investment returns, portfolio optimization, analyze my investments, carteira de investimentos, análise de portfólio, analisar meus investimentos, otimização de carteira.
+- Phrases: "analyze my investment portfolio", "how are my investments performing?", "optimize my portfolio", "should I rebalance my assets?", "analisar minha carteira de investimentos", "como estão meus investimentos?", "otimizar minha carteira".
+- Context: Any discussion about analyzing, managing, or optimizing a collection of financial assets.
+
+**Example user queries that trigger this skill:**
+- "Can you analyze my stock portfolio?"
+- "I need a detailed risk assessment of my investments."
+- "Quero otimizar minha carteira de investimentos para um maior retorno."
+- "Gostaria de uma análise completa do meu portfólio de ações."
 
 ## When to Use This Skill
 This skill is particularly useful and recommended in the following scenarios:
@@ -140,189 +153,3 @@ This capability assists users in constructing and optimizing their portfolios to
 *   **The Power of Diversification:** Diversification is a fundamental principle of sound risk management. A well-diversified portfolio across different asset classes, geographies, and sectors can help to reduce risk without necessarily sacrificing returns.
 *   **The Importance of Regular Reviews:** Financial markets are dynamic and constantly evolving. It is essential to review your portfolio on a regular basis and make adjustments as needed to stay on track with your financial goals.
 *   **Consider Transaction Costs and Taxes:** The analysis provided by this skill does not typically account for transaction costs and taxes, which can have a significant impact on real-world returns. Always consider these factors in your investment decisions.
-*   **Understand the Assumptions:** Be aware of the assumptions underlying the financial models used in this skill, such as the assumption of normal distribution of returns in some models. These assumptions may not always hold true in the real world.
-*   **Behavioral Biases:** Be mindful of your own behavioral biases, such as loss aversion and overconfidence, which can lead to suboptimal investment decisions. This skill provides objective data to help you counteract these biases.
-
-## Troubleshooting
-
-*   **Data Errors:** If you encounter errors related to data, double-check the format and quality of your input CSV file. Ensure that there are no missing values or incorrect data types.
-*   **Library Issues:** If you get errors related to Python libraries, make sure that all the required libraries (`pandas`, `numpy`, `scipy`, `matplotlib`, `plotly`) are installed in your environment.
-*   **Incorrect Weights:** If the portfolio weights in your `portfolio.json` file do not sum to 1, the analysis may produce incorrect results. Always ensure that the weights are properly normalized.
-*   **Benchmark Not Found:** If the specified benchmark is not found, you may need to use a different ticker or source for the benchmark data.
-*   **API Rate Limits:** When fetching data from financial data providers, be mindful of any API rate limits to avoid being blocked.
-
-## Advanced Examples and Code Snippets
-
-### Example 1: Comprehensive Portfolio Return Calculation
-
-```python
-import pandas as pd
-import json
-
-# Load historical portfolio data
-data = pd.read_csv('portfolio_data.csv', index_col='Date', parse_dates=True)
-
-# Load portfolio definition
-with open('portfolio.json') as f:
-    portfolio = json.load(f)
-
-# Calculate daily returns for each asset
-returns = data.pct_change()
-
-# Calculate weighted daily returns for the portfolio
-asset_weights = [asset['weight'] for asset in portfolio['assets']]
-weighted_returns = (returns * asset_weights).sum(axis=1)
-
-# Calculate cumulative portfolio returns
-cumulative_returns = (1 + weighted_returns).cumprod() - 1
-
-# Plot the cumulative returns
-import matplotlib.pyplot as plt
-plt.figure(figsize=(12, 6))
-plt.plot(cumulative_returns.index, cumulative_returns.values)
-plt.title('Portfolio Cumulative Returns')
-plt.xlabel('Date')
-plt.ylabel('Cumulative Returns')
-plt.grid(True)
-plt.show()
-```
-
-### Example 2: Calculating and Interpreting Multiple Risk Metrics
-
-```python
-import numpy as np
-
-# Calculate annualized return
-annualized_return = weighted_returns.mean() * 252
-
-# Calculate annualized volatility (standard deviation)
-annualized_volatility = weighted_returns.std() * np.sqrt(252)
-
-# Assume a risk-free rate from the portfolio definition
-risk_free_rate = portfolio['risk_free_rate']
-
-# Calculate the Sharpe Ratio
-sharpe_ratio = (annualized_return - risk_free_rate) / annualized_volatility
-
-# Calculate downside deviation for Sortino Ratio
-downside_returns = weighted_returns[weighted_returns < 0]
-downside_deviation = downside_returns.std() * np.sqrt(252)
-
-# Calculate the Sortino Ratio
-sortino_ratio = (annualized_return - risk_free_rate) / downside_deviation
-
-print(f'Annualized Return: {annualized_return:.2%}')
-print(f'Annualized Volatility: {annualized_volatility:.2%}')
-print(f'Sharpe Ratio: {sharpe_ratio:.2f}')
-print(f'Sortino Ratio: {sortino_ratio:.2f}')
-```
-
-### Example 3: Monte Carlo Simulation for Future Projections
-
-```python
-# Set up the Monte Carlo simulation parameters
-num_simulations = 1000
-num_days = 252  # 1 year
-
-# Create a DataFrame to hold the simulation results
-simulation_df = pd.DataFrame()
-
-# Run the simulation
-for x in range(num_simulations):
-    count = 0
-    daily_vol = weighted_returns.std()
-    
-    price_series = []
-    
-    price = cumulative_returns.iloc[-1]
-    price_series.append(price)
-    
-    for i in range(num_days):
-        price = price_series[count] * (1 + np.random.normal(0, daily_vol))
-        price_series.append(price)
-        count += 1
-    
-    simulation_df[x] = price_series
-
-# Plot the simulation results
-plt.figure(figsize=(12, 6))
-plt.plot(simulation_df)
-plt.title('Monte Carlo Simulation of Portfolio Performance')
-plt.xlabel('Day')
-plt.ylabel('Portfolio Value')
-plt.show()
-```
-
-### Example 4: Efficient Frontier Optimization
-
-```python
-import numpy as np
-import pandas as pd
-from scipy.optimize import minimize
-
-# Function to calculate portfolio performance
-def portfolio_performance(weights, mean_returns, cov_matrix):
-    returns = np.sum(mean_returns * weights) * 252
-    std = np.sqrt(np.dot(weights.T, np.dot(cov_matrix, weights))) * np.sqrt(252)
-    return returns, std
-
-# Function to minimize (negative Sharpe Ratio)
-def neg_sharpe_ratio(weights, mean_returns, cov_matrix, risk_free_rate):
-    p_returns, p_std = portfolio_performance(weights, mean_returns, cov_matrix)
-    return -(p_returns - risk_free_rate) / p_std
-
-# Asset returns and covariance
-mean_returns = returns.mean()
-cov_matrix = returns.cov()
-num_assets = len(mean_returns)
-
-# Constraints and bounds
-args = (mean_returns, cov_matrix, risk_free_rate)
-constraints = ({'type': 'eq', 'fun': lambda x: np.sum(x) - 1})
-bounds = tuple((0, 1) for asset in range(num_assets))
-
-# Initial guess
-initial_guess = num_assets * [1. / num_assets,]
-
-# Optimize for maximum Sharpe Ratio
-result = minimize(neg_sharpe_ratio, initial_guess, args=args,
-                    method='SLSQP', bounds=bounds, constraints=constraints)
-
-# Optimal weights
-optimal_weights = result['x']
-print('Optimal Weights:')
-for ticker, weight in zip(returns.columns, optimal_weights):
-    print(f'{ticker}: {weight:.2%}')
-```
-
-## Glossary of Terms
-
-*   **Alpha:** A measure of the active return on an investment, the performance of that investment compared with a suitable benchmark.
-*   **Beta:** A measure of the volatility, or systematic risk, of a security or a portfolio in comparison to the market as a whole.
-*   **Correlation:** A statistical measure that expresses the extent to which two variables are linearly related, meaning they change together at a constant rate.
-*   **Covariance:** A measure of the joint variability of two random variables.
-*   **Diversification:** A risk management strategy that mixes a wide variety of investments within a portfolio.
-*   **Efficient Frontier:** The set of optimal portfolios that offer the highest expected return for a defined level of risk or the lowest risk for a given level of expected return.
-*   **Modern Portfolio Theory (MPT):** A theory on how risk-averse investors can construct portfolios to optimize or maximize expected return based on a given level of market risk.
-*   **Sharpe Ratio:** A measure of risk-adjusted return, calculated as the average return earned in excess of the risk-free rate per unit of volatility or total risk.
-*   **Standard Deviation:** A measure of the dispersion of a set of data from its mean.
-*   **Value at Risk (VaR):** A statistic that quantifies the extent of possible financial losses within a firm, portfolio, or position over a specific time frame.
-
-## Disclaimer
-
-The information and tools provided by this skill are for educational and informational purposes only and do not constitute financial advice. The skill is not a substitute for professional financial advice from a qualified financial advisor. Investment decisions should be made based on your own personal financial situation and investment objectives. The author and publisher of this skill are not liable for any losses or damages arising from the use of this information.
-
-## References and Further Reading
-
-*   [Investopedia: A Guide to Modern Portfolio Theory (MPT)](https://www.investopedia.com/terms/m/modernportfoliotheory.asp)
-*   [Investopedia: Measuring a Portfolio's Performance](https://www.investopedia.com/articles/08/performance-measure.asp)
-*   [CION Investments: 5 Key Metrics to Benchmark a Portfolio](https://cioninvestments.com/insights/portfolio-benchmarks-key-metrics/)
-*   [Portfolio Visualizer: An advanced online tool for portfolio analysis](https://www.portfoliovisualizer.com/)
-*   ["A Random Walk Down Wall Street" by Burton Malkiel](https://www.amazon.com/Random-Walk-Down-Wall-Street/dp/0393358380)
-*   ["The Intelligent Investor" by Benjamin Graham](https://www.amazon.com/Intelligent-Investor-Definitive-Investing-Essentials/dp/0060555661)
-*   ["Fooled by Randomness" by Nassim Nicholas Taleb](https://www.amazon.com/Fooled-Randomness-Hidden-Chance-Markets/dp/0812975219)
-*   [Python for Finance: Cookbook](https://www.oreilly.com/library/view/python-for-finance/9781492024329/)
-
----
-
-*This skill was created by an AI agent and has been reviewed by a human.*

@@ -1,6 +1,6 @@
 ---
 name: appointment-scheduler
-description: A skill for scheduling appointments and meetings with automated reminders.
+description: "Use this skill to schedule, manage, and automate appointments, meetings, and events. Triggers: schedule, appointment, meeting, book, calendar, event, reminder, sync, block time, agendar, consulta, reunião, marcar, calendário, evento, lembrete."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -15,9 +15,22 @@ The **Appointment Scheduler** skill empowers Manus to manage scheduling-related 
 
 This skill leverages integrations with external calendar providers like Google Calendar and Outlook Calendar through MCP (Model Context Protocol) tools. By doing so, it can access real-time availability, prevent double-booking, and ensure that all events are synchronized across devices and platforms. The ultimate goal is to provide a seamless and intelligent scheduling assistant that understands natural language requests and executes them reliably.
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: schedule, appointment, meeting, book, calendar, event, reminder, sync, block time, find time, availability, agendar, agendamento, consulta, reunião, marcar, calendário, evento, lembrete, bloquear horário, encontrar horário, disponibilidade.
+- Phrases: "schedule a meeting", "book an appointment", "find a time to talk", "set a reminder", "check my calendar", "marcar uma reunião", "agendar uma consulta", "verificar minha agenda", "criar um evento".
+- Context: Any discussion about managing time, coordinating with others, or setting up events in a calendar.
+
+**Example user queries that trigger this skill:**
+- "Can you schedule a meeting with John for tomorrow at 10am?"
+- "Preciso marcar uma consulta com o Dr. Silva na próxima semana."
+- "Find a 30-minute slot for me and Maria next Monday."
+- "Set a reminder for my dentist appointment."
+
 ## When to Use This Skill
 
-This skill is particularly useful in a variety of scenarios where scheduling is a primary task. You should consider using this skill when you need to:
+ALWAYS use this skill when the user needs to:
 
 *   **Schedule professional meetings:** Book meetings with clients, colleagues, or business partners. This includes finding mutually available times, sending invitations, and booking meeting rooms.
 *   **Manage client appointments:** For professionals like consultants, lawyers, or freelancers, this skill can handle booking, rescheduling, and reminding clients about their appointments.
@@ -225,76 +238,7 @@ To get the most out of the Appointment Scheduler skill, follow these best practi
 *   **Be Specific:** Provide as much detail as possible in your initial request. Include the full names of participants, their email addresses if known, the desired duration, and a clear topic for the meeting. This reduces the need for back-and-forth questions.
 *   **Define Time Zones:** When scheduling with people in different geographic locations, always specify the time zone to avoid confusion. For example: `"Book a call with Alex (alex@example.com) for 9 AM PST."`
 *   **Use Clear Titles:** A descriptive title helps participants understand the purpose of the meeting at a glance. Instead of "Meeting," use "Marketing Sync - Q3 Campaign Planning."
-*   **Integrate Your Calendar:** Ensure your primary calendar (Google, Outlook, etc.) is connected to Manus to allow for accurate availability checks and seamless event creation.
-*   **Set Default Preferences:** Configure your default preferences, such as your typical working hours, preferred meeting durations, and reminder settings. This will help Manus make smarter suggestions.
-*   **Leverage Templates:** For recurring appointment types, create templates. This can speed up the process of scheduling common events like weekly check-ins or new client onboarding calls.
-*   **Handle Cancellations Gracefully:** When you need to cancel, provide a brief reason if appropriate. `"Cancel my 2 PM meeting with John; I need to deal with an urgent issue. Please suggest we reschedule for tomorrow."`
-*   **Confirm External Contacts:** For new contacts, double-check that Manus has the correct email address before sending an invitation. `"The email for Jane Doe is jane.doe@external.com, is that correct?"`
+*   **Leverage Templates:** For recurring or common appointment types, use templates to save time and ensure consistency.
+*   **Confirm Before Cancelling:** Always double-check before asking Manus to cancel an appointment, especially if it involves other people.
 
-## Security and Privacy
-
-Handling calendar and contact information requires a strong commitment to security and privacy.
-
-*   **Authentication:** The skill must use secure, token-based authentication (OAuth 2.0) to connect to calendar services. API keys and user tokens should be encrypted and stored securely.
-*   **Data Minimization:** The skill should only request the minimum permissions necessary to perform its tasks. For example, it needs permission to read and write to the calendar, but it does not need access to emails or other personal data.
-*   **User Consent:** Manus must obtain explicit user consent before accessing any calendar or contact data. The user should be clearly informed about what data will be accessed and for what purpose.
-*   **Transparency:** All actions taken by the skill, such as creating or modifying an event, should be logged and auditable by the user.
-*   **Data Handling:** Any cached data, such as availability information, should be temporary and securely deleted after the scheduling task is complete. No personal data should be stored long-term without a legitimate reason and user consent.
-
-## Troubleshooting
-
-Even with a powerful skill like this, issues can arise. Here are some common problems and how to resolve them.
-
-*   **Problem: Incorrect Time Zone**
-    *   **Symptom:** A meeting is scheduled for the wrong time, often off by a few hours.
-    *   **Solution:** Explicitly state the time zone in your request. If the problem persists, check the default time zone settings in your connected calendar and in your Manus user profile.
-
-*   **Problem: Unable to Find Availability**
-    *   **Symptom:** Manus reports that it cannot find any free slots for the requested participants.
-    *   **Solution:** Try a broader time frame (e.g., "next week" instead of "tomorrow afternoon"). If it's a large group, consider making some attendees optional. Also, ensure that all participants have shared their availability correctly in their calendars.
-
-*   **Problem: Event Not Appearing on Calendar**
-    *   **Symptom:** Manus confirms that an event was created, but it doesn't show up on your calendar.
-    *   **Solution:** First, check if the correct calendar is being synced. You might have multiple calendars (e.g., "Work," "Personal"), and the event may have been added to a different one. If that's not the issue, there might be a temporary sync delay. If the problem continues, you may need to re-authenticate your calendar connection with Manus.
-
-*   **Problem: Incorrect Participant Invited**
-    *   **Symptom:** An invitation is sent to the wrong person with a similar name.
-    *   **Solution:** When possible, provide the full email address of the participant. If you only provide a name, and Manus finds multiple matches in your contacts, it should ask for clarification. If it doesn't, you can update the event manually and provide feedback to the Manus team to improve the skill's disambiguation logic.
-
-## Dependencies
-
-This skill relies on the following external tools and services, which must be configured for it to function correctly:
-
-*   **`google-calendar` MCP Server:** Required for interacting with Google Calendar. The user must have a Google account and grant Manus access.
-*   **`outlook-mail` MCP Server:** Required for interacting with Outlook Calendar. The user must have a Microsoft account and grant Manus access.
-*   **`gmail` MCP Server:** Used for sending email notifications and reminders via Gmail.
-*   **`shell` Tool:** Used for executing internal commands and scripts, such as the `manus-mcp-cli`.
-
-## Future Enhancements
-
-This skill can be extended with even more powerful features in the future.
-
-*   **Proactive Scheduling:** Manus could proactively identify the need for a meeting based on email conversations or project management tool updates and suggest scheduling it.
-*   **Integration with Other Tools:** Deeper integration with project management tools (like Jira or Trello), CRMs (like Salesforce), and other business software could allow for even more context-aware scheduling.
-*   **Automated Follow-ups:** After a meeting, Manus could automatically send a follow-up email with a summary of the discussion, action items, or a link to the meeting recording.
-*   **Intelligent Time-of-Day Suggestions:** The skill could learn the preferences of different participants (e.g., "Jane prefers morning meetings") and suggest times that are more likely to be accepted.
-*   **Multi-platform Support:** Expanding beyond Google and Outlook to support other calendar platforms like Apple iCloud Calendar would increase the skill's versatility.
-*   **Voice-based Interaction:** For hands-free scheduling, the skill could be enhanced to work seamlessly through voice commands.
-*   **Public Scheduling Links:** Generate public links where external participants can see your availability and book a time slot directly, similar to services like Calendly.
-*   **Buffer Time:** Automatically add buffer time before and after meetings to prevent back-to-back scheduling and allow for travel or preparation.
-
-## Glossary
-
-*   **MCP (Model Context Protocol):** A protocol that allows Manus to interact with external services and tools in a standardized way.
-*   **OAuth 2.0:** An open standard for access delegation, commonly used to grant websites or applications access to information on other websites without giving them the passwords.
-*   **API (Application Programming Interface):** A set of rules and tools for building software and applications. In this context, it refers to the interfaces provided by Google and Microsoft to interact with their calendar services.
-*   **iCalendar (iCal):** A standard format for exchanging calendar information. Files in this format typically have the extension `.ics`.
-
-## References
-
-For more detailed information on the underlying technologies and best practices, you can refer to the following resources:
-
-*   **Google Calendar API Documentation:** [https://developers.google.com/calendar/api/guides/overview](https://developers.google.com/calendar/api/guides/overview)
-*   **Microsoft Outlook Calendar API Documentation:** [https://docs.microsoft.com/en-us/graph/api/resources/calendar?view=graph-rest-1.0](https://docs.microsoft.com/en-us/graph/api/resources/calendar?view=graph-rest-1.0)
-*   **Article on Effective Meeting Scheduling:** [https://hbr.org/2016/07/how-to-schedule-meetings-that-people-actually-want-to-attend](https://hbr.org/2016/07/how-to-schedule-meetings-that-people-actually-want-to-attend)
-*   **IETF RFC 5545 (iCalendar):** [https://tools.ietf.org/html/rfc5545](https://tools.ietf.org/html/rfc5545) - The standard for calendar data exchange.
+By following these guidelines, you can turn Manus into a powerful and reliable scheduling assistant.

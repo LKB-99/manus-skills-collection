@@ -1,6 +1,6 @@
 ---
 name: prompt-engineering
-description: Advanced techniques for prompt engineering for LLMs, including chain-of-thought, few-shot learning, and prompt optimization.
+description: "Use this skill for advanced prompt engineering techniques. Triggers: prompt engineering, chain-of-thought, few-shot learning, prompt optimization, otimização de prompt, engenharia de prompt."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -13,6 +13,18 @@ metadata:
 This skill provides a comprehensive guide to advanced prompt engineering techniques. It is designed to help users craft effective prompts that maximize the performance of Large Language Models (LLMs). By leveraging techniques such as chain-of-thought, few-shot learning, and prompt optimization, users can unlock the full potential of LLMs for a wide range of tasks, from simple text generation to complex reasoning and problem-solving.
 
 This skill is particularly useful for developers, researchers, and anyone interested in getting the most out of their interactions with LLMs. Whether you are building an AI-powered application or simply want to improve your prompting skills, this guide will provide you with the knowledge and tools you need to succeed.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: prompt, prompt engineering, chain-of-thought, few-shot learning, prompt optimization, LLM, GPT, otimizar prompt, engenharia de prompt, criar prompt
+- Phrases: "como criar um bom prompt", "otimizar meu prompt", "melhorar a resposta do LLM", "usar chain-of-thought", "aprendizado few-shot"
+- Context: Any discussion about improving the quality of responses from Large Language Models.
+
+**Example user queries that trigger this skill:**
+- "Como posso otimizar meu prompt para o GPT-4?"
+- "Me ensine a usar a técnica de chain-of-thought."
+- "Preciso de ajuda para criar um prompt para gerar código."
 
 ## When to Use This Skill
 This skill is useful in a variety of situations where you need to interact with a Large Language Model (LLM). Here are a few examples:

@@ -1,6 +1,6 @@
 ---
 name: changelog-writer
-description: A skill designed to automate the generation of changelogs by following the Conventional Commits specification and the Keep a Changelog format.
+description: "Automates changelog generation from Git history. Use this skill when users need to create, update, or manage a changelog file, generate release notes, or follow Conventional Commits and Keep a Changelog standards. Triggers: changelog, release notes, conventional commits, keep a changelog, git log, versioning, release, git tag, CHANGELOG.md, histórico de versões, notas de lançamento."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -10,6 +10,18 @@ metadata:
 # changelog-writer: Automated Changelog Generation
 
 ## Overview
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: changelog, release notes, conventional commits, keep a changelog, git log, versioning, release, git tag, CHANGELOG.md, histórico de versões, notas de lançamento
+- Phrases: "gerar changelog", "criar notas de lançamento", "atualizar o CHANGELOG.md", "changelog a partir do git", "conventional commits"
+- Context: Any discussion about documenting changes for a new software version, automating release notes from git history, or managing a project's version history file.
+
+**Example user queries that trigger this skill:**
+- "Preciso gerar um changelog para a nova versão do meu projeto."
+- "Como posso criar release notes automaticamente a partir dos meus commits?"
+- "Quero manter um CHANGELOG.md seguindo o formato Keep a Changelog."
 
 Maintaining a clear, consistent, and up-to-date changelog is a critical practice in software development, yet it is often a manual and error-prone task. The `changelog-writer` skill is designed to eliminate this burden by automating the entire process. It leverages two widely adopted standards: **Conventional Commits** for structured commit messages and **Keep a Changelog** for formatting the output file. By parsing your Git history, the skill automatically identifies features, fixes, breaking changes, and other significant modifications, compiling them into a well-organized and human-readable `CHANGELOG.md` file. This ensures that your project's history is not only machine-readable but also easily understandable for developers, stakeholders, and end-users.
 

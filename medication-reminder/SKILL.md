@@ -1,6 +1,6 @@
 ---
 name: medication-reminder
-description: A comprehensive medication reminder system that includes alerts for drug interactions, helping users manage their medication schedules safely and effectively.
+description: "Manage medication schedules, get reminders, and check for drug interactions. Use this skill when users want to track medications, set reminders for pills, or check for drug safety. Triggers: medication reminder, lembrete de remédio, pill reminder, medicine schedule, horário de medicação, drug interaction, interação medicamentosa, manage my meds."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 
 ## Overview
 This skill provides a robust system for managing medication schedules, sending timely reminders, and automatically checking for potential drug interactions. It is designed to help users, caregivers, and healthcare professionals ensure medication adherence and safety. By leveraging external APIs and internal data storage, the skill can maintain a personalized medication list, track dosages, and alert users to potential conflicts between their prescribed drugs. This is particularly useful for individuals with complex medication regimens, chronic conditions, or those under the care of multiple specialists.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: medication reminder, lembrete de remédio, pill reminder, medicine schedule, horário de medicação, drug interaction, interação medicamentosa, manage my meds, tomar remédio, controle de medicação
+- Phrases: "set a reminder for my medication", "preciso de um alarme para meu remédio", "check if my drugs interact", "verificar interação de medicamentos", "gerenciar meus remédios"
+- Context: Any discussion about managing, scheduling, remembering, or checking safety of medications.
+
+**Example user queries that trigger this skill:**
+- "Você pode me lembrar de tomar meu remédio às 8h?"
+- "I need to add a new medication to my list."
+- "Verifique se a amoxicilina interage com a varfarina."
+- "Como posso controlar os horários dos meus medicamentos?"
 
 ## When to Use This Skill
 This skill is most effective in the following scenarios:
@@ -261,54 +274,3 @@ Daily Adherence Rate: 50.0%
   }
 ]
 ```
-
-### Template: Shell Script for a Basic Reminder (Conceptual)
-
-This script demonstrates the logic for sending a notification.
-
-```bash
-#!/bin/bash
-
-# reminder.sh
-
-MED_NAME=$1
-MED_DOSAGE=$2
-LOG_FILE="~/.medication_reminder/adherence.log"
-
-# Display notification and get user action
-ACTION=$(zenity --notification --text="Time to take your ${MED_NAME} (${MED_DOSAGE})" \
-  --listen --menu="Take|Skip|Snooze 15 min")
-
-TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
-
-case $ACTION in
-  "Take")
-    echo "${TIMESTAMP},${MED_NAME},${MED_DOSAGE},TAKEN" >> $LOG_FILE
-    zenity --info --text="Great! Your dose has been logged."
-    ;;
-  "Skip")
-    echo "${TIMESTAMP},${MED_NAME},${MED_DOSAGE},SKIPPED" >> $LOG_FILE
-    ;;
-  "Snooze 15 min")
-    echo "${TIMESTAMP},${MED_NAME},${MED_DOSAGE},SNOOZED" >> $LOG_FILE
-    # Logic to reschedule the reminder for 15 minutes later
-    sleep 900 && bash "$0" "$@" &
-    ;;
-esac
-
-exit 0
-```
-
-## References
-
-*   **OpenFDA API:** [https://open.fda.gov/apis/](https://open.fda.gov/apis/)
-    > A resource for querying massive datasets related to drugs, devices, and food. Useful for retrieving drug label information, though not a dedicated interaction checker.
-
-*   **NIH RxNorm API:** [https://www.nlm.nih.gov/research/umls/rxnorm/docs/api.html](https://www.nlm.nih.gov/research/umls/rxnorm/docs/api.html)
-    > A more robust and clinically-focused API for normalizing drug names and checking for interactions. This is the recommended primary source for the interaction checking feature.
-
-*   **DrugBank:** [https://go.drugbank.com/](https://go.drugbank.com/)
-    > A comprehensive, searchable database of drug and drug target information. An excellent resource for manual research and verification.
-
-*   **MedlinePlus Drug Information:** [https://medlineplus.gov/druginformation.html](https://medlineplus.gov/druginformation.html)
-    > Authoritative and consumer-friendly information on thousands of prescription and over-the-counter drugs.

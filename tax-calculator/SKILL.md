@@ -1,7 +1,7 @@
 
 ---
 name: tax-calculator
-description: A comprehensive guide to the Brazilian tax system for individuals and legal entities, including calculation examples and best practices.
+description: "Calculates and provides a guide to the Brazilian tax system. Use this skill when users need to calculate, understand, or get information about Brazilian taxes like IRPF, IRPJ, ICMS, ISS, and others. Triggers: imposto, IRPF, IRPJ, ICMS, ISS, Simples Nacional, Lucro Presumido, Lucro Real, calcular imposto, tax, Brazil tax, income tax."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -10,10 +10,26 @@ metadata:
 
 # Tax Calculator: Brazilian Tax System Guide
 
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: imposto, IRPF, IRPJ, ICMS, ISS, PIS, COFINS, CSLL, Simples Nacional, Lucro Presumido, Lucro Real, tributos, tax, income tax, Brazil tax, imposto de renda, nota fiscal
+- Phrases: "calcular imposto", "como declarar imposto de renda", "qual o melhor regime tributário", "cálculo de ICMS", "imposto sobre serviço"
+- Context: Any discussion about calculating, paying, or understanding Brazilian taxes for individuals or companies.
+
+**Example user queries that trigger this skill:**
+- "Como calculo o IRPF de 2024?"
+- "Minha empresa deve ser Lucro Real ou Presumido?"
+- "Preciso de ajuda para entender o ICMS na venda de um produto."
+
 ## Overview
 This skill provides a detailed guide to the complex Brazilian tax system for both individuals (Pessoas Físicas) and legal entities (Pessoas Jurídicas). It is designed to help users understand the main federal, state, and municipal taxes, their calculation methods, and their respective obligations. The skill offers practical examples, step-by-step workflows for common tax-related tasks, and best practices for maintaining tax compliance in Brazil. Use this skill to navigate the intricacies of Brazilian taxation, from calculating income tax to understanding the various corporate tax regimes.
 
 ## When to Use This Skill
+**ALWAYS use this skill when user mentions:**
+- Keywords: imposto, IRPF, IRPJ, ICMS, ISS, PIS, COFINS, CSLL, Simples Nacional, Lucro Presumido, Lucro Real, tributos, tax, income tax, Brazil tax, imposto de renda, nota fiscal
+- Phrases: "calcular imposto", "como declarar imposto de renda", "qual o melhor regime tributário", "cálculo de ICMS", "imposto sobre serviço"
+
 This skill is particularly useful in the following scenarios:
 
 - **Individuals:**

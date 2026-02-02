@@ -1,6 +1,6 @@
 ---
 name: kanban-board
-description: Create and manage Kanban boards for visual task management.
+description: "Use this skill when users want to create, manage, or visualize tasks using a Kanban board, to-do list, or project management tool. Triggers: kanban, kanban board, quadro kanban, to-do list, project management, task management, agile, scrum, Trello, Asana, Jira, organizar tarefas, gerenciar projetos."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,18 @@ metadata:
 
 ## Overview
 This skill empowers Manus to create, manage, and interact with Kanban boards directly within the chat interface. It provides a powerful way to visually organize tasks, track progress, and manage workflows for various projects. By leveraging simple text commands, users can build complex boards, move cards between columns, and get a clear overview of their work, enhancing productivity and project clarity.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: kanban, kanban board, quadro kanban, to-do list, project management, task management, agile, scrum, Trello, Asana, Jira, organizar tarefas, gerenciar projetos
+- Phrases: "criar um quadro kanban", "gerenciar minhas tarefas", "organizar um projeto", "preciso de um to-do list", "como o Trello", "alternativa ao Jira"
+- Context: Any discussion about organizing tasks, managing projects, or using visual workflow tools.
+
+**Example user queries that trigger this skill:**
+- "Quero criar um kanban para meu projeto"
+- "Me ajude a organizar minhas tarefas da semana"
+- "Preciso de uma ferramenta para gerenciar o fluxo de trabalho da minha equipe"
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:

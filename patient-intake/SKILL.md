@@ -1,6 +1,6 @@
 ---
 name: patient-intake
-description: A skill to automate the process of gathering comprehensive patient medical histories through structured forms.
+description: "Automate gathering of patient medical histories. Use this skill when creating patient intake forms, anamnesis, or collecting medical history. Triggers: patient intake, anamnese, formulário de paciente, histórico médico, medical history, new patient form, patient registration."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,13 @@ metadata:
 
 ## Overview
 This skill is designed to streamline and standardize the collection of patient information by generating and processing comprehensive medical history forms. It helps healthcare professionals gather detailed data from patients in a structured format, covering everything from personal details and chief complaints to past medical history, family history, social history, and review of systems. By automating this process, the skill reduces administrative workload, minimizes errors, and ensures that clinicians have a complete and accurate patient profile before the first consultation.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: patient intake, anamnese, formulário de paciente, histórico médico, medical history, new patient form, patient registration, medical questionnaire, health history
+- Phrases: "criar um formulário para paciente novo", "coletar histórico médico do paciente", "gerar anamnese", "create a new patient form", "gather medical history"
+- Context: Any discussion about creating forms or questionnaires to collect patient health information before a consultation.
 
 ## When to Use This Skill
 This skill is particularly useful in the following scenarios:

@@ -1,6 +1,6 @@
 ---
 name: voice-cloning
-description: A comprehensive skill for voice cloning and speech synthesis using APIs like ElevenLabs and Coqui.
+description: "Comprehensive voice cloning and text-to-speech (TTS) synthesis. Use this skill when users want to clone a voice, generate speech from text, create voiceovers, or use TTS APIs like ElevenLabs. Triggers: voice cloning, clonagem de voz, text-to-speech, TTS, speech synthesis, generate audio, voiceover, ElevenLabs, Coqui, narrar, narração, locução, sintetizar voz."
 allowed-tools: [Read, Write, Edit, Bash, Browser]
 license: MIT License
 metadata:
@@ -11,6 +11,19 @@ metadata:
 
 ## Overview
 This skill provides a comprehensive toolkit for voice cloning and text-to-speech (TTS) synthesis. It enables the agent to generate high-quality audio in various voices, clone existing voices from audio samples, and integrate these capabilities into complex workflows. The skill primarily leverages the ElevenLabs and Coqui TTS APIs, offering a wide range of options for voice generation, from instant voice cloning with a few seconds of audio to professional-grade cloning for creating highly realistic and versatile voice models.
+
+## Automatic Triggers
+
+**ALWAYS activate this skill when user mentions:**
+- Keywords: voice cloning, clonagem de voz, text-to-speech, TTS, speech synthesis, generate audio, voiceover, ElevenLabs, Coqui, narrar, narração, locução, sintetizar voz, criar áudio, gerar áudio, voz sintética.
+- Phrases: "clone my voice", "clonar minha voz", "create a voiceover", "criar uma locução", "text to speech", "texto em áudio", "sintetizar um texto", "gerar áudio de um texto".
+- Context: Any discussion about generating audio from text, creating synthetic voices, or using voice cloning technologies.
+
+**Example user queries that trigger this skill:**
+- "Can you clone a voice from an audio file?"
+- "Quero transformar este artigo em um podcast."
+- "Preciso de uma narração para meu vídeo."
+- "How do I use the ElevenLabs API for text-to-speech?"
 
 ## When to Use This Skill
 This skill is particularly useful in a variety of scenarios that require the generation of spoken audio. It can be used to:
